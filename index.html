@@ -3,27 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AWS Cloud Engineer Portfolio</title>
+    <title>Kanakaprasad SD | AWS Cloud Engineer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap">
     <style>
         :root {
             --primary: #232f3e;
             --secondary: #ff9900;
+            --accent: #00a1f1;
             --light: #f5f5f5;
             --dark: #131a22;
+            --text: #333333;
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
             background-color: #f8f9fa;
-            color: #333;
+            color: var(--text);
+            font-family: 'Open Sans', sans-serif;
             line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
         }
         
         .container {
@@ -40,7 +48,7 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
         }
         
         nav {
@@ -54,9 +62,16 @@
             color: white;
             font-size: 1.8rem;
             font-weight: 700;
+            display: flex;
+            align-items: center;
         }
         
         .logo span {
+            color: var(--secondary);
+        }
+        
+        .logo i {
+            margin-right: 10px;
             color: var(--secondary);
         }
         
@@ -74,10 +89,24 @@
             text-decoration: none;
             font-size: 1.1rem;
             transition: color 0.3s;
+            font-weight: 500;
+            position: relative;
+            padding-bottom: 5px;
         }
         
-        .nav-links a:hover {
-            color: var(--secondary);
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
         }
         
         .menu-btn {
@@ -98,15 +127,36 @@
             padding-top: 80px;
         }
         
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
         .hero-content h1 {
             font-size: 3.5rem;
             margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero-content .highlight {
+            color: var(--secondary);
+            position: relative;
+        }
+        
+        .hero-content .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--secondary);
         }
         
         .hero-content p {
             font-size: 1.5rem;
-            max-width: 800px;
             margin: 0 auto 30px;
+            max-width: 700px;
         }
         
         .btn {
@@ -117,11 +167,28 @@
             border-radius: 5px;
             text-decoration: none;
             font-weight: 600;
-            transition: background 0.3s;
+            transition: all 0.3s;
+            border: 2px solid var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
         }
         
         .btn:hover {
-            background: #e88b00;
+            background: transparent;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            margin-left: 15px;
+            border: 2px solid white;
+        }
+        
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary);
         }
         
         /* Sections */
@@ -170,20 +237,52 @@
             color: var(--primary);
         }
         
+        .about-text p {
+            margin-bottom: 15px;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: center;
+        }
+        
+        .info-item i {
+            color: var(--secondary);
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
         .about-image {
             flex: 1;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            position: relative;
         }
         
         .about-image img {
             width: 100%;
             height: auto;
             display: block;
+            transition: transform 0.5s;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
         }
         
         /* Skills Section */
+        .skills-section {
+            background-color: #f0f2f5;
+        }
+        
         .skills-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -196,11 +295,31 @@
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             text-align: center;
-            transition: transform 0.3s;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
         }
         
         .skill-card:hover {
             transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--secondary);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s;
+        }
+        
+        .skill-card:hover::before {
+            transform: scaleX(1);
         }
         
         .skill-icon {
@@ -212,6 +331,26 @@
         .skill-card h3 {
             margin-bottom: 15px;
             color: var(--primary);
+        }
+        
+        .skill-card ul {
+            list-style: none;
+            text-align: left;
+            margin-top: 15px;
+        }
+        
+        .skill-card ul li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #eee;
+        }
+        
+        .skill-card ul li:last-child {
+            border-bottom: none;
+        }
+        
+        .skill-card ul li i {
+            color: var(--secondary);
+            margin-right: 8px;
         }
         
         /* Projects Section */
@@ -226,16 +365,19 @@
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
+            transition: all 0.3s;
+            position: relative;
         }
         
         .project-card:hover {
             transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
         
         .project-img {
             height: 200px;
             overflow: hidden;
+            background: var(--primary);
         }
         
         .project-img img {
@@ -243,10 +385,12 @@
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s;
+            opacity: 0.9;
         }
         
         .project-card:hover .project-img img {
             transform: scale(1.1);
+            opacity: 1;
         }
         
         .project-content {
@@ -268,9 +412,85 @@
         .tech {
             background: #e6f7ff;
             color: #0066cc;
-            padding: 5px 10px;
+            padding: 5px 15px;
             border-radius: 20px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        /* Experience Section */
+        .experience-section {
+            background-color: #f0f2f5;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--secondary);
+            left: 50%;
+            margin-left: -2px;
+        }
+        
+        .timeline-item {
+            padding: 20px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+        }
+        
+        .timeline-content::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            transform: rotate(45deg);
+            background: white;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content::after {
+            right: -10px;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content::after {
+            left: -10px;
+        }
+        
+        .timeline-content h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .timeline-content .date {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: block;
         }
         
         /* Contact Section */
@@ -302,6 +522,7 @@
             margin-right: 15px;
             color: white;
             font-size: 1.2rem;
+            flex-shrink: 0;
         }
         
         .contact-form .form-group {
@@ -315,6 +536,7 @@
             border: 1px solid #ddd;
             border-radius: 5px;
             font-size: 1rem;
+            font-family: 'Open Sans', sans-serif;
         }
         
         .contact-form textarea {
@@ -347,11 +569,21 @@
             align-items: center;
             color: white;
             text-decoration: none;
-            transition: background 0.3s;
+            transition: all 0.3s;
         }
         
         .social-icon:hover {
             background: var(--secondary);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        .copyright span {
+            color: var(--secondary);
         }
         
         /* Responsive Design */
@@ -363,6 +595,28 @@
             
             .projects-container {
                 grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+            
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 0;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content::after,
+            .timeline-item:nth-child(even) .timeline-content::after {
+                left: 20px;
+                right: auto;
+                top: -10px;
+                transform: rotate(-45deg);
             }
         }
         
@@ -393,11 +647,25 @@
             }
             
             .hero-content h1 {
-                font-size: 2.8rem;
+                font-size: 2.5rem;
             }
             
             .hero-content p {
                 font-size: 1.2rem;
+            }
+            
+            .btn-container {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .btn-outline {
+                margin-left: 0;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -407,12 +675,13 @@
     <header>
         <div class="container">
             <nav>
-                <div class="logo">AWS<span>Portfolio</span></div>
+                <div class="logo"><i class="fab fa-aws"></i>Kanakaprasad<span>SD</span></div>
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#projects">Projects</a></li>
+                    <li><a href="#experience">Experience</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
                 <div class="menu-btn">
@@ -426,9 +695,12 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>AWS Cloud Engineer & DevOps Specialist</h1>
+                <h1>AWS Cloud Engineer & <span class="highlight">DevOps Specialist</span></h1>
                 <p>Building scalable, secure, and cost-effective cloud solutions on Amazon Web Services</p>
-                <a href="#projects" class="btn">View My Work</a>
+                <div class="btn-container">
+                    <a href="#projects" class="btn">View My Work</a>
+                    <a href="#contact" class="btn btn-outline">Get In Touch</a>
+                </div>
             </div>
         </div>
     </section>
@@ -441,21 +713,41 @@
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <h3>Cloud Solutions Architect with 5+ years of AWS experience</h3>
-                    <p>Hello! I'm a certified AWS Solutions Architect with extensive experience in designing, implementing, and managing cloud infrastructure. I specialize in building highly available, fault-tolerant systems that scale with business needs.</p>
-                    <p>My expertise includes infrastructure as code (IaC), CI/CD pipelines, containerization, serverless architectures, and cloud security best practices. I'm passionate about automating cloud operations and optimizing cloud spend.</p>
-                    <p>When I'm not architecting cloud solutions, I contribute to open-source projects and write technical articles about AWS services and cloud-native technologies.</p>
-                    <p><strong>Certifications:</strong> AWS Solutions Architect Professional, AWS DevOps Engineer Professional, AWS Security Specialty</p>
+                    <h3>AWS Cloud Engineer at Carveniche Technologies</h3>
+                    <p>Hello! I'm Kanakaprasad SD, an AWS Cloud Engineer based in Bengaluru with 1.3 years of hands-on experience in designing, deploying, and optimizing cloud infrastructure.</p>
+                    <p>My expertise includes provisioning and managing EC2 instances, ensuring high availability with Elastic Load Balancers (ELB) and static Elastic IPs. I am skilled in Route 53 for domain and subdomain management, including SSL upgrades via AWS Certificate Manager (ACM).</p>
+                    <p>Security and performance are at the core of my work—I leverage AWS Security Hub, WAF, and CloudFront to enhance security and optimize content delivery. With hands-on experience in IAM policy management, Linux OS patching, and log management, I ensure robust system administration.</p>
+                    <p>I have built CI/CD pipelines from scratch, integrating Git for seamless deployments. Using AWS Amplify, I streamline web app hosting for scalability and performance. I also monitor infrastructure with New Relic and handle secure file transfers using WinSCP (SFTP/FTP).</p>
+                    <p>Additionally, I have foundational knowledge of Docker and Kubernetes, utilizing Docker CLI for container monitoring.</p>
+                    
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Bengaluru, India</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-building"></i>
+                            <span>Carveniche Technologies</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-briefcase"></i>
+                            <span>1.3 Years Experience</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>AWS Certified</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="AWS Engineer">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Kanakaprasad SD">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" style="background-color: #f0f2f5;">
+    <section id="skills" class="skills-section">
         <div class="container">
             <div class="section-title">
                 <h2>Technical Skills</h2>
@@ -465,43 +757,53 @@
                     <div class="skill-icon">
                         <i class="fab fa-aws"></i>
                     </div>
-                    <h3>AWS Services</h3>
-                    <p>EC2, S3, Lambda, RDS, VPC, IAM, CloudFormation, CloudFront, ECS, EKS, Route53</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3>Infrastructure as Code</h3>
-                    <p>Terraform, CloudFormation, CDK, Ansible, Packer</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-sync-alt"></i>
-                    </div>
-                    <h3>CI/CD & DevOps</h3>
-                    <p>Jenkins, GitHub Actions, AWS CodePipeline, Docker, Kubernetes, GitLab CI</p>
+                    <h3>AWS Core Services</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i>EC2 & Elastic IP</li>
+                        <li><i class="fas fa-check-circle"></i>Elastic Load Balancers</li>
+                        <li><i class="fas fa-check-circle"></i>Route 53 Management</li>
+                        <li><i class="fas fa-check-circle"></i>VPC Configuration</li>
+                        <li><i class="fas fa-check-circle"></i>S3 & CloudFront</li>
+                    </ul>
                 </div>
                 <div class="skill-card">
                     <div class="skill-icon">
                         <i class="fas fa-shield-alt"></i>
                     </div>
-                    <h3>Cloud Security</h3>
-                    <p>IAM Policies, Security Groups, KMS, WAF, GuardDuty, Config, Security Hub</p>
+                    <h3>Security & Compliance</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i>AWS Security Hub</li>
+                        <li><i class="fas fa-check-circle"></i>Web Application Firewall</li>
+                        <li><i class="fas fa-check-circle"></i>ACM Certificate Management</li>
+                        <li><i class="fas fa-check-circle"></i>IAM Policy Management</li>
+                        <li><i class="fas fa-check-circle"></i>Linux OS Patching</li>
+                    </ul>
                 </div>
                 <div class="skill-card">
                     <div class="skill-icon">
-                        <i class="fas fa-server"></i>
+                        <i class="fas fa-sync-alt"></i>
                     </div>
-                    <h3>Serverless</h3>
-                    <p>Lambda, API Gateway, DynamoDB, SQS, SNS, Step Functions, AppSync</p>
+                    <h3>DevOps & CI/CD</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i>CI/CD Pipeline Development</li>
+                        <li><i class="fas fa-check-circle"></i>Git Integration</li>
+                        <li><i class="fas fa-check-circle"></i>AWS Amplify Hosting</li>
+                        <li><i class="fas fa-check-circle"></i>Automated Deployments</li>
+                        <li><i class="fas fa-check-circle"></i>Infrastructure as Code</li>
+                    </ul>
                 </div>
                 <div class="skill-card">
                     <div class="skill-icon">
-                        <i class="fas fa-chart-line"></i>
+                        <i class="fas fa-tools"></i>
                     </div>
-                    <h3>Monitoring</h3>
-                    <p>CloudWatch, X-Ray, Prometheus, Grafana, ELK Stack, Datadog</p>
+                    <h3>Tools & Technologies</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i>New Relic Monitoring</li>
+                        <li><i class="fas fa-check-circle"></i>WinSCP (SFTP/FTP)</li>
+                        <li><i class="fas fa-check-circle"></i>Docker CLI & Containers</li>
+                        <li><i class="fas fa-check-circle"></i>Kubernetes Fundamentals</li>
+                        <li><i class="fas fa-check-circle"></i>Log Management</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -519,47 +821,74 @@
                         <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="CI/CD Pipeline">
                     </div>
                     <div class="project-content">
-                        <h3>Enterprise CI/CD Pipeline</h3>
-                        <p>Designed and implemented a secure multi-account CI/CD pipeline using AWS CodePipeline, CodeBuild, and CodeDeploy with infrastructure as code deployment.</p>
+                        <h3>Automated CI/CD Pipeline</h3>
+                        <p>Designed and implemented a secure CI/CD pipeline using AWS services and Git integration, enabling seamless deployments and reducing deployment time by 60%.</p>
                         <div class="tech-stack">
                             <span class="tech">AWS CodePipeline</span>
-                            <span class="tech">Terraform</span>
-                            <span class="tech">Docker</span>
-                            <span class="tech">GitHub Actions</span>
+                            <span class="tech">Git</span>
+                            <span class="tech">AWS Amplify</span>
+                            <span class="tech">EC2</span>
                         </div>
-                        <a href="#" class="btn">Case Study</a>
                     </div>
                 </div>
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Serverless App">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Security Infrastructure">
                     </div>
                     <div class="project-content">
-                        <h3>Serverless E-commerce Platform</h3>
-                        <p>Architected a scalable serverless e-commerce platform handling 10K+ daily users using Lambda, API Gateway, and DynamoDB with cost optimization strategies.</p>
+                        <h3>Cloud Security Enhancement</h3>
+                        <p>Implemented comprehensive security measures using AWS Security Hub, WAF, and IAM policies to protect infrastructure, reducing security incidents by 90%.</p>
                         <div class="tech-stack">
-                            <span class="tech">AWS Lambda</span>
-                            <span class="tech">DynamoDB</span>
+                            <span class="tech">AWS Security Hub</span>
+                            <span class="tech">WAF</span>
+                            <span class="tech">IAM</span>
+                            <span class="tech">ACM</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="High Availability Setup">
+                    </div>
+                    <div class="project-content">
+                        <h3>High Availability Architecture</h3>
+                        <p>Designed and deployed a highly available infrastructure using ELB, Route 53, and multiple availability zones, achieving 99.99% uptime for critical applications.</p>
+                        <div class="tech-stack">
+                            <span class="tech">ELB</span>
+                            <span class="tech">Route 53</span>
                             <span class="tech">CloudFront</span>
-                            <span class="tech">Cognito</span>
+                            <span class="tech">EC2</span>
                         </div>
-                        <a href="#" class="btn">Case Study</a>
                     </div>
                 </div>
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Kubernetes Cluster">
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Professional Experience</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>AWS Cloud Engineer</h3>
+                        <span class="date">2023 - Present</span>
+                        <h4>Carveniche Technologies, Bengaluru</h4>
+                        <p>Designing, deploying, and optimizing cloud infrastructure on AWS. Managing EC2 instances, ELB configurations, and Route 53 DNS management.</p>
+                        <p>Implementing security measures using AWS Security Hub, WAF, and IAM policies. Building CI/CD pipelines and managing web applications with AWS Amplify.</p>
+                        <p>Monitoring infrastructure performance with New Relic and implementing log management solutions.</p>
                     </div>
-                    <div class="project-content">
-                        <h3>Managed Kubernetes Service</h3>
-                        <p>Implemented a production-grade EKS cluster with automated scaling, service mesh integration, and GitOps workflow for 50+ microservices.</p>
-                        <div class="tech-stack">
-                            <span class="tech">EKS</span>
-                            <span class="tech">Helm</span>
-                            <span class="tech">Istio</span>
-                            <span class="tech">Prometheus</span>
-                        </div>
-                        <a href="#" class="btn">Case Study</a>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Cloud Infrastructure Intern</h3>
+                        <span class="date">2022 - 2023</span>
+                        <h4>Carveniche Technologies, Bengaluru</h4>
+                        <p>Assisted senior engineers in deploying and managing AWS infrastructure. Learned EC2 instance management, VPC configuration, and basic security practices.</p>
+                        <p>Participated in infrastructure monitoring and log analysis. Gained hands-on experience with Linux server administration and patch management.</p>
                     </div>
                 </div>
             </div>
@@ -567,7 +896,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" style="background-color: #f0f2f5;">
+    <section id="contact">
         <div class="container">
             <div class="section-title">
                 <h2>Get In Touch</h2>
@@ -581,7 +910,7 @@
                         </div>
                         <div>
                             <h4>Email</h4>
-                            <p>cloud.engineer@example.com</p>
+                            <p>kanakaprasad.sd@example.com</p>
                         </div>
                     </div>
                     <div class="contact-detail">
@@ -590,7 +919,7 @@
                         </div>
                         <div>
                             <h4>LinkedIn</h4>
-                            <p>linkedin.com/in/aws-cloud-engineer</p>
+                            <p>linkedin.com/in/kanakaprasad-sd</p>
                         </div>
                     </div>
                     <div class="contact-detail">
@@ -599,7 +928,16 @@
                         </div>
                         <div>
                             <h4>GitHub</h4>
-                            <p>github.com/aws-cloud-engineer</p>
+                            <p>github.com/kanakaprasad-sd</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Bengaluru, India</p>
                         </div>
                     </div>
                 </div>
@@ -631,9 +969,10 @@
                 <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
                 <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
                 <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-dev"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-aws"></i></a>
             </div>
-            <p>&copy; 2023 AWS Cloud Engineer Portfolio. All rights reserved.</p>
+            <p class="copyright">&copy; 2023 <span>Kanakaprasad SD</span>. All rights reserved.</p>
+            <p class="copyright">AWS Cloud Engineer Portfolio</p>
         </div>
     </footer>
 
@@ -665,10 +1004,26 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
+                
+                // Close mobile menu if open
+                navLinks.classList.remove('active');
+                
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
             });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
+                header.style.background = 'rgba(19, 26, 34, 0.95)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+                header.style.background = 'var(--primary)';
+            }
         });
     </script>
 </body>
