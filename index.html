@@ -43,192 +43,400 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kanakaprasad SD - AWS Cloud Engineer & DevOps Specialist</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <div class="logo">
-            <img src="https://freepnglogo.com/images/aws-logo.png" alt="AWS Logo">
-            <h1>Kanakaprasad SD</h1>
+        <div class="container">
+            <nav>
+                <div class="logo"><i class="fab fa-aws"></i>Kanakaprasad<span>SD</span></div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
     </header>
-    <main>
-        <section id="home">
-            <h2>AWS Cloud Engineer & DevOps Specialist</h2>
-            <p>Building scalable, secure, and cost-effective cloud solutions on Amazon Web Services</p>
-            <div class="buttons">
-                <a href="#projects" class="btn primary">View My Work</a>
-                <a href="#contact" class="btn secondary">Get in Touch</a>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>AWS Cloud Engineer & <span class="highlight">DevOps Specialist</span></h1>
+                <p>Building scalable, secure, and cost-effective cloud solutions on Amazon Web Services</p>
+                <div class="btn-container">
+                    <a href="#projects" class="btn">View My Work</a>
+                    <a href="#contact" class="btn btn-outline">Get In Touch</a>
+                </div>
             </div>
-        </section>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Cloud and DevOps Engineer with 1+ year of hands-on experience designing and managing scalable, secure AWS infrastructures. Skilled in Linux system administration, CI/CD automation, and cloud monitoring. Proven ability to optimize cloud environments, automate workflows, and ensure secure, high-availability systems using tools like Git, Jenkins, Docker, and AWS services. Eager to contribute to cloud-first teams with a focus on reliability, security, and performance.</p>
-        </section>
-        <section id="skills">
-            <h2>Technical Skills</h2>
-            <div class="skills-grid">
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Cloud and DevOps Engineer</h3>
+                    <p>Cloud and DevOps Engineer with 1+ year of hands-on experience designing and managing scalable, secure AWS infrastructures. Skilled in Linux system administration, CI/CD automation, and cloud monitoring. Proven ability to optimize cloud environments, automate workflows, and ensure secure, high-availability systems using tools like Git, Jenkins, Docker, and AWS services. Eager to contribute to cloud-first teams with a focus on reliability, security, and performance.</p>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Bengaluru, Karnataka, India</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-building"></i>
+                            <span>beGalileo (via Carveniche Technologies)</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-briefcase"></i>
+                            <span>1+ Year Experience</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>BCA, RCU Belagavi</span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn resume-btn">Download Resume</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1516321310764-8a7b1f3a4e94?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Kanakaprasad SD">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Technical Skills</h2>
+            </div>
+            <div class="skills-container">
                 <div class="skill-card">
-                    <i class="fab fa-aws"></i>
+                    <div class="skill-icon">
+                        <i class="fab fa-aws"></i>
+                    </div>
                     <h3>AWS</h3>
                     <ul>
-                        <li>EC2</li>
-                        <li>ELB</li>
-                        <li>EBS</li>
-                        <li>S3</li>
-                        <li>EFS</li>
-                        <li>Glacier</li>
-                        <li>VPC</li>
-                        <li>Route 53</li>
-                        <li>IAM</li>
-                        <li>CloudFront</li>
-                        <li>WAF</li>
-                        <li>Lambda</li>
-                        <li>SNS</li>
-                        <li>CloudWatch</li>
-                        <li>ACM</li>
-                        <li>Amplify</li>
+                        <li><i class="fas fa-check-circle"></i>EC2</li>
+                        <li><i class="fas fa-check-circle"></i>ELB</li>
+                        <li><i class="fas fa-check-circle"></i>EBS</li>
+                        <li><i class="fas fa-check-circle"></i>S3</li>
+                        <li><i class="fas fa-check-circle"></i>EFS</li>
+                        <li><i class="fas fa-check-circle"></i>Glacier</li>
+                        <li><i class="fas fa-check-circle"></i>VPC</li>
+                        <li><i class="fas fa-check-circle"></i>Route 53</li>
+                        <li><i class="fas fa-check-circle"></i>IAM</li>
+                        <li><i class="fas fa-check-circle"></i>CloudFront</li>
+                        <li><i class="fas fa-check-circle"></i>WAF</li>
+                        <li><i class="fas fa-check-circle"></i>Lambda</li>
+                        <li><i class="fas fa-check-circle"></i>SNS</li>
+                        <li><i class="fas fa-check-circle"></i>CloudWatch</li>
+                        <li><i class="fas fa-check-circle"></i>ACM</li>
+                        <li><i class="fas fa-check-circle"></i>Amplify</li>
                     </ul>
                 </div>
                 <div class="skill-card">
-                    <i class="fas fa-shield-alt"></i>
+                    <div class="skill-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
                     <h3>Security & Compliance</h3>
                     <ul>
-                        <li>AWS Security Hub</li>
-                        <li>WAF</li>
-                        <li>IAM Policy Management</li>
-                        <li>ACM</li>
+                        <li><i class="fas fa-check-circle"></i>AWS Security Hub</li>
+                        <li><i class="fas fa-check-circle"></i>WAF</li>
+                        <li><i class="fas fa-check-circle"></i>IAM Policy Management</li>
+                        <li><i class="fas fa-check-circle"></i>ACM</li>
                     </ul>
                 </div>
                 <div class="skill-card">
-                    <i class="fas fa-code-branch"></i>
+                    <div class="skill-icon">
+                        <i class="fas fa-code-branch"></i>
+                    </div>
                     <h3>DevOps & CI/CD</h3>
                     <ul>
-                        <li>Git</li>
-                        <li>Jenkins</li>
-                        <li>Docker</li>
-                        <li>Kubernetes (basic)</li>
-                        <li>Ansible</li>
-                        <li>SonarQube</li>
-                        <li>CodeDeploy</li>
+                        <li><i class="fas fa-check-circle"></i>Git</li>
+                        <li><i class="fas fa-check-circle"></i>Jenkins</li>
+                        <li><i class="fas fa-check-circle"></i>Docker</li>
+                        <li><i class="fas fa-check-circle"></i>Kubernetes (basic)</li>
+                        <li><i class="fas fa-check-circle"></i>Ansible</li>
+                        <li><i class="fas fa-check-circle"></i>SonarQube</li>
+                        <li><i class="fas fa-check-circle"></i>CodeDeploy</li>
                     </ul>
                 </div>
                 <div class="skill-card">
-                    <i class="fas fa-tools"></i>
+                    <div class="skill-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
                     <h3>Tools & Technologies</h3>
                     <ul>
-                        <li>New Relic</li>
-                        <li>WinSCP (SFTP/FTP)</li>
-                        <li>Apache</li>
-                        <li>Nginx</li>
-                        <li>Tomcat</li>
-                        <li>Shell Scripting</li>
-                        <li>Python (basic)</li>
-                        <li>Linux (RedHat, Ubuntu, Amazon Linux)</li>
-                        <li>Windows</li>
+                        <li><i class="fas fa-check-circle"></i>New Relic</li>
+                        <li><i class="fas fa-check-circle"></i>WinSCP (SFTP/FTP)</li>
+                        <li><i class="fas fa-check-circle"></i>Apache</li>
+                        <li><i class="fas fa-check-circle"></i>Nginx</li>
+                        <li><i class="fas fa-check-circle"></i>Tomcat</li>
+                        <li><i class="fas fa-check-circle"></i>Shell Scripting</li>
+                        <li><i class="fas fa-check-circle"></i>Python (basic)</li>
+                        <li><i class="fas fa-check-circle"></i>Linux (RedHat, Ubuntu, Amazon Linux)</li>
+                        <li><i class="fas fa-check-circle"></i>Windows</li>
                     </ul>
                 </div>
             </div>
-        </section>
-        <section id="projects">
-            <h2>Recent Projects</h2>
-            <div class="projects-grid">
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <div class="section-title">
+                <h2>Recent Projects</h2>
+            </div>
+            <div class="projects-container">
                 <div class="project-card">
-                    <img src="https://via.placeholder.com/300x200" alt="Project 1">
-                    <h3>Automated CI/CD Pipeline</h3>
-                    <p>Achieved a 60% reduction in deployment time by implementing a fully automated CI/CD pipeline using AWS CodePipeline, Git, AWS Amplify, and EC2 instances.</p>
-                    <div class="tags">
-                        <span>AWS CodePipeline</span>
-                        <span>Git</span>
-                        <span>AWS Amplify</span>
-                        <span>EC2</span>
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Automated CI/CD Pipeline">
+                    </div>
+                    <div class="project-content">
+                        <h3>Automated CI/CD Pipeline</h3>
+                        <p>Achieved a 60% reduction in deployment time by implementing a fully automated CI/CD pipeline using AWS CodePipeline, Git, AWS Amplify, and EC2 instances.</p>
+                        <div class="tech-stack">
+                            <span class="tech">AWS CodePipeline</span>
+                            <span class="tech">Git</span>
+                            <span class="tech">AWS Amplify</span>
+                            <span class="tech">EC2</span>
+                        </div>
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="https://via.placeholder.com/300x200" alt="Project 2">
-                    <h3>Cloud Security Enhancement</h3>
-                    <p>Reduced security incidents by 90% through the implementation of AWS Security Hub, WAF, IAM policies, and ACM for certificate management.</p>
-                    <div class="tags">
-                        <span>AWS Security Hub</span>
-                        <span>WAF</span>
-                        <span>IAM</span>
-                        <span>ACM</span>
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1563013544-824ae起身
+                        <div class="project-content">
+                            <h3>Cloud Security Enhancement</h3>
+                            <p>Reduced security incidents by 90% through the implementation of AWS Security Hub, WAF, IAM policies, and ACM for certificate management.</p>
+                            <div class="tech-stack">
+                                <span class="tech">AWS Security Hub</span>
+                                <span class="tech">WAF</span>
+                                <span class="tech">IAM</span>
+                                <span class="tech">ACM</span>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="project-card">
-                    <img src="https://via.placeholder.com/300x200" alt="Project 3">
-                    <h3>High Availability Architecture</h3>
-                    <p>Designed and deployed a highly available architecture achieving 99.99% uptime using ELB, Route 53, CloudFront, and EC2 instances.</p>
-                    <div class="tags">
-                        <span>ELB</span>
-                        <span>Route 53</span>
-                        <span>CloudFront</span>
-                        <span>EC2</span>
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="High Availability Architecture">
+                        </div>
+                        <div class="project-content">
+                            <h3>High Availability Architecture</h3>
+                            <p>Designed and deployed a highly available architecture achieving 99.99% uptime using ELB, Route 53, CloudFront, and EC2 instances.</p>
+                            <div class="tech-stack">
+                                <span class="tech">ELB</span>
+                                <span class="tech">Route 53</span>
+                                <span class="tech">CloudFront</span>
+                                <span class="tech">EC2</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section id="experience">
-            <h2>Professional Experience</h2>
-            <div class="job">
-                <h3>Cloud Systems Administrator</h3>
-                <p>beGalileo (via Carveniche Technologies) | Nov 2024 – Present</p>
-                <ul>
-                    <li>Designed, deployed, and optimized scalable AWS infrastructure with a focus on performance and high availability.</li>
-                    <li>Managed EC2 instances, ELBs, Elastic IPs, Route 53 routing, and ACM-based SSL integration.</li>
-                    <li>Implemented AWS Security Hub, WAF, and CloudFront for robust security and content delivery.</li>
-                    <li>Automated deployments via CI/CD pipelines using Git and hosted web apps on AWS Amplify.</li>
-                    <li>Administered IAM roles, performed Linux OS patching, log management, and system monitoring via New Relic.</li>
-                    <li>Handled secure file transfers via WinSCP (SFTP/FTP).</li>
-                    <li>Worked with Docker CLI for basic container management and monitoring.</li>
-                </ul>
-            </div>
-            <div class="job">
-                <h3>Cloud Infra and Tech Support Engineer</h3>
-                <p>beGalileo (via Carveniche Technologies) | Apr 2024 – Nov 2024</p>
-                <ul>
-                    <li>Delivered technical support for AWS infrastructure, including EC2, IAM, Route 53, and CloudFront.</li>
-                    <li>Resolved deployment, access, and configuration issues; enforced access controls using IAM policies.</li>
-                    <li>Maintained AWS Security Hub and WAF to meet compliance and enhance cloud protection.</li>
-                    <li>Ensured secure communication through ACM-managed certificates.</li>
-                    <li>Monitored infrastructure performance using New Relic; supported SFTP/FTP-based data transfer via WinSCP.</li>
-                </ul>
+
+        <section id="experience" class="experience-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Professional Experience</h2>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>Cloud Systems Administrator</h3>
+                            <span class="date">Nov 2024 – Present</span>
+                            <h4>beGalileo (via Carveniche Technologies), Bengaluru</h4>
+                            <ul>
+                                <li>Designed, deployed, and optimized scalable AWS infrastructure with a focus on performance and high availability.</li>
+                                <li>Managed EC2 instances, ELBs, Elastic IPs, Route 53 routing, and ACM-based SSL integration.</li>
+                                <li>Implemented AWS Security Hub, WAF, and CloudFront for robust security and content delivery.</li>
+                                <li>Automated deployments via CI/CD pipelines using Git and hosted web apps on AWS Amplify.</li>
+                                <li>Administered IAM roles, performed Linux OS patching, log management, and system monitoring via New Relic.</li>
+                                <li>Handled secure file transfers via WinSCP (SFTP/FTP).</li>
+                                <li>Worked with Docker CLI for basic container management and monitoring.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>Cloud Infra and Tech Support Engineer</h3>
+                            <span class="date">Apr 2024 – Nov 2024</span>
+                            <h4>beGalileo (via Carveniche Technologies), Bengaluru</h4>
+                            <ul>
+                                <li>Delivered technical support for AWS infrastructure, including EC2, IAM, Route 53, and CloudFront.</li>
+                                <li>Resolved deployment, access, and configuration issues; enforced access controls using IAM policies.</li>
+                                <li>Maintained AWS Security Hub and WAF to meet compliance and enhance cloud protection.</li>
+                                <li>Ensured secure communication through ACM-managed certificates.</li>
+                                <li>Monitored infrastructure performance using New Relic; supported SFTP/FTP-based data transfer via WinSCP.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
+
         <section id="contact">
-            <h2>Get In Touch</h2>
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <p><i class="fas fa-envelope"></i> kanakaprasad.2001@gmail.com</p>
-                    <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/kanakaprasad-sd/">LinkedIn Profile</a></p>
-                    <p><i class="fab fa-github"></i> <a href="https://github.com/Kanakaprasad">GitHub Profile</a></p>
-                    <p><i class="fas fa-map-marker-alt"></i> Bengaluru, Karnataka, India</p>
+            <div class="container">
+                <div class="section-title">
+                    <h2>Get In Touch</h2>
                 </div>
-                <div class="contact-form">
-                    <form action="#" method="post">
-                        <input type="text" name="name" placeholder="Your Name" required>
-                        <input type="email" name="email" placeholder="Your Email" required>
-                        <input type="text" name="subject" placeholder="Subject" required>
-                        <textarea name="message" placeholder="Your Message" required></textarea>
-                        <button type="submit" class="btn primary">Send Message</button>
-                    </form>
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <h3>Contact Information</h3>
+                        <div class="contact-detail">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>kanakaprasad.2001@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <div class="contact-icon">
+                                <i class="fab fa-linkedin"></i>
+                            </div>
+                            <div>
+                                <h4>LinkedIn</h4>
+                                <p><a href="https://www.linkedin.com/in/kanakaprasad-sd">LinkedIn Profile</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <div class="contact-icon">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <div>
+                                <h4>GitHub</h4>
+                                <p><a href="https://github.com/Kanakaprasad">GitHub Profile</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Bengaluru, Karnataka, India</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <input type="text" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" placeholder="Your Email" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" placeholder="Subject" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea placeholder="Your Message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn">Send Message</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
-    </main>
-    <footer>
-        <p>© 2025 Kanakaprasad SD. All rights reserved.</p>
-    </footer>
+
+        <footer>
+            <div class="container">
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/kanakaprasad-sd" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/Kanakaprasad" class="social-icon"><i class="fab fa-github"></i></a>
+                </div>
+                <p class="copyright">© 2025 <span>Kanakaprasad SD</span>. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <div class="scroll-top">
+            <i class="fas fa-arrow-up"></i>
+        </div>
+
+        <script>
+            // Mobile Menu Toggle
+            const menuBtn = document.querySelector('.menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+            
+            menuBtn.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                menuBtn.querySelector('i').classList.toggle('fa-bars');
+                menuBtn.querySelector('i').classList.toggle('fa-times');
+            });
+            
+            // Close menu when clicking a link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    menuBtn.querySelector('i').classList.add('fa-bars');
+                    menuBtn.querySelector('i').classList.remove('fa-times');
+                });
+            });
+            
+            // Form Submission
+            const contactForm = document.getElementById('contactForm');
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Thank you for your message! I will get back to you soon.');
+                contactForm.reset();
+            });
+            
+            // Smooth Scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            // Scroll to top functionality
+            document.querySelector('.scroll-top').addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Animation on scroll
+            const animateOnScroll = () => {
+                const elements = document.querySelectorAll('.about-content, .skill-card, .project-card, .timeline-item, .contact-container');
+                
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.3;
+                    
+                    if (elementPosition < screenPosition) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+            
+            document.querySelectorAll('.about-content, .skill-card, .project-card, .timeline-item, .contact-container').forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(50px)';
+                element.style.transition = 'all 0.8s ease';
+            });
+            
+            window.addEventListener('load', animateOnScroll);
+            window.addEventListener('scroll', animateOnScroll);
+        </script>
 </body>
 </html>
