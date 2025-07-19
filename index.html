@@ -1,43 +1,4 @@
-<script type="text/javascript">
-        var gk_isXlsx = false;
-        var gk_xlsxFileLookup = {};
-        var gk_fileData = {};
-        function filledCell(cell) {
-          return cell !== '' && cell != null;
-        }
-        function loadFileData(filename) {
-        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
-            try {
-                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
-                var firstSheetName = workbook.SheetNames[0];
-                var worksheet = workbook.Sheets[firstSheetName];
-
-                // Convert sheet to JSON to filter blank rows
-                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
-                // Filter out blank rows (rows where all cells are empty, null, or undefined)
-                var filteredData = jsonData.filter(row => row.some(filledCell));
-
-                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
-                var headerRowIndex = filteredData.findIndex((row, index) =>
-                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
-                );
-                // Fallback
-                if (headerRowIndex === -1 || headerRowIndex > 25) {
-                  headerRowIndex = 0;
-                }
-
-                // Convert filtered JSON back to CSV
-                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
-                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
-                return csv;
-            } catch (e) {
-                console.error(e);
-                return "";
-            }
-        }
-        return gk_fileData[filename] || "";
-        }
-        </script><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -47,72 +8,124 @@
 </head>
 <body>
     <header>
-        <h1>AWS Cloud Engineer & DevOps Specialist</h1>
-        <p>Building scalable, secure, and cost-effective cloud solutions on Amazon Web Services</p>
+        <div class="logo">
+            <img src="aws-logo.png" alt="AWS Logo">
+            <h1>Kanakaprasad SD</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
+        <section id="home">
+            <h2>AWS Cloud Engineer & DevOps Specialist</h2>
+            <p>Building scalable, secure, and cost-effective cloud solutions on Amazon Web Services</p>
+            <div class="buttons">
+                <a href="#projects" class="btn primary">View My Work</a>
+                <a href="#contact" class="btn secondary">Get in Touch</a>
+            </div>
+        </section>
         <section id="about">
             <h2>About Me</h2>
             <p>Cloud and DevOps Engineer with 1+ year of hands-on experience designing and managing scalable, secure AWS infrastructures. Skilled in Linux system administration, CI/CD automation, and cloud monitoring. Proven ability to optimize cloud environments, automate workflows, and ensure secure, high-availability systems using tools like Git, Jenkins, Docker, and AWS services. Eager to contribute to cloud-first teams with a focus on reliability, security, and performance.</p>
         </section>
         <section id="skills">
             <h2>Technical Skills</h2>
-            <div class="skill-category">
-                <h3>Cloud Platforms</h3>
-                <ul>
-                    <li>AWS: EC2, ELB, EBS, S3, EFS, Glacier, VPC, Route 53, IAM, CloudFront, WAF, Lambda, SNS, CloudWatch, ACM, Amplify</li>
-                </ul>
-            </div>
-            <div class="skill-category">
-                <h3>DevOps Tools</h3>
-                <ul>
-                    <li>Git, Jenkins, Docker, Kubernetes (basic), Ansible, SonarQube</li>
-                </ul>
-            </div>
-            <div class="skill-category">
-                <h3>CI/CD</h3>
-                <ul>
-                    <li>Git, Jenkins, CodeDeploy – Pipeline setup & automation</li>
-                </ul>
-            </div>
-            <div class="skill-category">
-                <h3>Monitoring & Security</h3>
-                <ul>
-                    <li>New Relic, AWS Security Hub, WAF, IAM Policy Management</li>
-                </ul>
-            </div>
-            <div class="skill-category">
-                <h3>Operating Systems</h3>
-                <ul>
-                    <li>Linux (RedHat, Ubuntu, Amazon Linux), Windows</li>
-                </ul>
-            </div>
-            <div class="skill-category">
-                <h3>Scripting</h3>
-                <ul>
-                    <li>Shell Scripting, Python (basic)</li>
-                </ul>
-            </div>
-            <div class="skill-category">
-                <h3>Other Tools</h3>
-                <ul>
-                    <li>WinSCP (SFTP/FTP), Apache, Nginx, Tomcat</li>
-                </ul>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <img src="aws-icon.png" alt="AWS Icon">
+                    <h3>AWS</h3>
+                    <ul>
+                        <li>EC2, ELB, EBS, S3, EFS, Glacier, VPC, Route 53, IAM, CloudFront, WAF, Lambda, SNS, CloudWatch, ACM, Amplify</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <img src="devops-icon.png" alt="DevOps Icon">
+                    <h3>DevOps Tools</h3>
+                    <ul>
+                        <li>Git, Jenkins, Docker, Kubernetes (basic), Ansible, SonarQube</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <img src="cicd-icon.png" alt="CI/CD Icon">
+                    <h3>CI/CD</h3>
+                    <ul>
+                        <li>Git, Jenkins, CodeDeploy – Pipeline setup & automation</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <img src="security-icon.png" alt="Security Icon">
+                    <h3>Monitoring & Security</h3>
+                    <ul>
+                        <li>New Relic, AWS Security Hub, WAF, IAM Policy Management</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <img src="os-icon.png" alt="OS Icon">
+                    <h3>Operating Systems</h3>
+                    <ul>
+                        <li>Linux (RedHat, Ubuntu, Amazon Linux), Windows</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <img src="scripting-icon.png" alt="Scripting Icon">
+                    <h3>Scripting</h3>
+                    <ul>
+                        <li>Shell Scripting, Python (basic)</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <img src="tools-icon.png" alt="Tools Icon">
+                    <h3>Other Tools</h3>
+                    <ul>
+                        <li>WinSCP (SFTP/FTP), Apache, Nginx, Tomcat</li>
+                    </ul>
+                </div>
             </div>
         </section>
         <section id="projects">
             <h2>Recent Projects</h2>
-            <div class="project">
-                <h3>Automated CI/CD Pipeline</h3>
-                <p>Achieved a 60% reduction in deployment time by implementing a fully automated CI/CD pipeline using AWS CodePipeline, Git, AWS Amplify, and EC2 instances.</p>
-            </div>
-            <div class="project">
-                <h3>Cloud Security Enhancement</h3>
-                <p>Reduced security incidents by 90% through the implementation of AWS Security Hub, WAF, IAM policies, and ACM for certificate management.</p>
-            </div>
-            <div class="project">
-                <h3>High Availability Architecture</h3>
-                <p>Designed and deployed a highly available architecture achieving 99.99% uptime using ELB, Route 53, CloudFront, and EC2 instances.</p>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="project1.jpg" alt="Project 1">
+                    <h3>Automated CI/CD Pipeline</h3>
+                    <p>Achieved a 60% reduction in deployment time by implementing a fully automated CI/CD pipeline using AWS CodePipeline, Git, AWS Amplify, and EC2 instances.</p>
+                    <div class="tags">
+                        <span>AWS CodePipeline</span>
+                        <span>Git</span>
+                        <span>AWS Amplify</span>
+                        <span>EC2</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="project2.jpg" alt="Project 2">
+                    <h3>Cloud Security Enhancement</h3>
+                    <p>Reduced security incidents by 90% through the implementation of AWS Security Hub, WAF, IAM policies, and ACM for certificate management.</p>
+                    <div class="tags">
+                        <span>AWS Security Hub</span>
+                        <span>WAF</span>
+                        <span>IAM</span>
+                        <span>ACM</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="project3.jpg" alt="Project 3">
+                    <h3>High Availability Architecture</h3>
+                    <p>Designed and deployed a highly available architecture achieving 99.99% uptime using ELB, Route 53, CloudFront, and EC2 instances.</p>
+                    <div class="tags">
+                        <span>ELB</span>
+                        <span>Route 53</span>
+                        <span>CloudFront</span>
+                        <span>EC2</span>
+                    </div>
+                </div>
             </div>
         </section>
         <section id="experience">
@@ -142,30 +155,29 @@
                 </ul>
             </div>
         </section>
-        <section id="certifications">
-            <h2>Trainings and Certifications</h2>
-            <ul>
-                <li>Red Hat Enterprise Linux & AWS (6 months) – Besant Technologies, BTM, Bangalore</li>
-                <li>DevOps Training – Besant Technologies, BTM, Bangalore</li>
-            </ul>
-        </section>
-        <section id="education">
-            <h2>Education</h2>
-            <ul>
-                <li>Bachelor of Computer Applications (BCA) – RCU Belagavi</li>
-                <li>PUC Science (PCMCS) – SA PU College</li>
-            </ul>
-        </section>
         <section id="contact">
             <h2>Get In Touch</h2>
-            <p>Email: kanakaprasad.2001@gmail.com</p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/kanakaprasad-sd/">linkedin.com/in/kanakaprasad-sd</a></p>
-            <p>GitHub: <a href="https://github.com/Kanakaprasad">github.com/Kanakaprasad</a></p>
-            <p>Location: Bengaluru, Karnataka, India</p>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <p><img src="email-icon.png" alt="Email"> kanakaprasad.2001@gmail.com</p>
+                    <p><img src="linkedin-icon.png" alt="LinkedIn"> <a href="[invalid url, do not cite]
+                    <p><img src="github-icon.png" alt="GitHub"> <a href="[invalid url, do not cite]
+                    <p><img src="location-icon.png" alt="Location"> Bengaluru, Karnataka, India</p>
+                </div>
+                <div class="contact-form">
+                    <form action="#" method="post">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <input type="text" name="subject" placeholder="Subject" required>
+                        <textarea name="message" placeholder="Your Message" required></textarea>
+                        <button type="submit" class="btn primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
         </section>
     </main>
     <footer>
-        <p>© 2025 Kanakaprasad SD. All rights reserved.</p>
+        <p>&copy; 2025 Kanakaprasad SD. All rights reserved.</p>
     </footer>
 </body>
 </html>
