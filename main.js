@@ -1,96 +1,87 @@
-// Mobile Menu Toggle
-const menuBtn = document.querySelector('.menu-btn');
-const navLinks = document.querySelector('.nav-links');
-
-if (menuBtn) {
-    menuBtn.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        if (menuBtn.querySelector('i').classList.contains('fa-bars')) {
-            menuBtn.querySelector('i').classList.remove('fa-bars');
-            menuBtn.querySelector('i').classList.add('fa-times');
+// Load sections dynamically
+document.addEventListener('DOMContentLoaded', function() {
+    // Array of section files to load
+    const sections = [
+        'about.html',
+        'services.html',
+        'skills.html',
+        'experience.html',
+        'projects.html',
+        'contact.html'
+    ];
+    
+    const contentContainer = document.getElementById('content');
+    
+    // Load each section file
+    sections.forEach(section => {
+        fetch(section)
+            .then(response => response.text())
+            .then(data => {
+                contentContainer.innerHTML += data;
+            })
+            .catch(error => {
+                console.error('Error loading section:', error);
+            });
+    });
+    
+    // Header scroll effect
+    window.addEventListener('scroll', function() {
+        const header = document.getElementById('header');
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
         } else {
-            menuBtn.querySelector('i').classList.remove('fa-times');
-            menuBtn.querySelector('i').classList.add('fa-bars');
+            header.classList.remove('scrolled');
         }
     });
-}
-
-// Close menu when clicking a link
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        if (menuBtn) {
-            menuBtn.querySelector('i').classList.remove('fa-times');
-            menuBtn.querySelector('i').classList.add('fa-bars');
-        }
-    });
-});
-
-// Form Submission
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        alert('Thank you for your message! I will get back to you soon.');
-        contactForm.reset();
-    });
-}
-
-// Header scroll effect
-window.addEventListener('scroll', () => {
-    const header = document.querySelector('header');
-    const scrollTopBtn = document.querySelector('.scroll-top');
     
-    if (header && window.scrollY > 100) {
-        header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
-        header.style.background = 'rgba(19, 26, 34, 0.95)';
-    } else if (header) {
-        header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-        header.style.background = 'var(--primary)';
+    // Mobile menu toggle
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const nav = document.getElementById('nav');
+    
+    mobileMenu.addEventListener('click', function() {
+        nav.classList.toggle('active');
+        this.querySelector('i').classList.toggle('fa-bars');
+        this.querySelector('i').classList.toggle('fa-times');
+    });
+    
+    // Close mobile menu when clicking on a link
+    const navLinks = document.querySelectorAll('nav ul li a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            nav.classList.remove('active');
+            mobileMenu.querySelector('i').classList.add('fa-bars');
+            mobileMenu.querySelector('i').classList.remove('fa-times');
+        });
+    });
+    
+    // Animate skill bars when they come into view
+    const animateSkillBars = () => {
+        const skillBars = document.querySelectorAll('.skill-progress');
+        skillBars.forEach(bar => {
+            const barPosition = bar.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.3;
+            
+            if (barPosition < screenPosition) {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 300);
+            }
+        });
+    };
+    
+    // Initialize skill bars
+    window.addEventListener('load', animateSkillBars);
+    window.addEventListener('scroll', animateSkillBars);
+    
+    // Form submission
+    const contactForm = document.querySelector('.contact-form form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            this.reset();
+        });
     }
-    
-    // Show/hide scroll to top button
-    if (scrollTopBtn) {
-        if (window.scrollY > 500) {
-            scrollTopBtn.classList.add('active');
-        } else {
-            scrollTopBtn.classList.remove('active');
-        }
-    }
 });
-
-// Scroll to top functionality
-document.querySelector('.scroll-top')?.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
-
-// Animation on scroll
-const animateOnScroll = () => {
-    const elements = document.querySelectorAll('.about-content, .skill-card, .project-card, .timeline-item, .contact-container');
-    
-    elements.forEach(element => {
-        const elementPosition = element.getBoundingClientRect().top;
-        const screenPosition = window.innerHeight / 1.3;
-        
-        if (elementPosition < screenPosition) {
-            element.style.opacity = '1';
-            element.style.transform = 'translateY(0)';
-        }
-    });
-};
-
-// Set initial styles for animated elements
-document.querySelectorAll('.about-content, .skill-card, .project-card, .timeline-item, .contact-container').forEach(element => {
-    element.style.opacity = '0';
-    element.style.transform = 'translateY(50px)';
-    element.style.transition = 'all 0.8s ease';
-});
-
-// Animate elements when page loads
-window.addEventListener('load', animateOnScroll);
-
-// Animate elements when scrolling
-window.addEventListener('scroll', animateOnScroll);
