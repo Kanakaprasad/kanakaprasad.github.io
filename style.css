@@ -94,10 +94,6 @@ nav {
     padding-bottom: 5px;
 }
 
-.nav-links a.active {
-    color: var(--secondary);
-}
-
 .nav-links a::after {
     content: '';
     position: absolute;
@@ -109,8 +105,7 @@ nav {
     transition: width 0.3s;
 }
 
-.nav-links a:hover::after,
-.nav-links a.active::after {
+.nav-links a:hover::after {
     width: 100%;
 }
 
@@ -122,8 +117,8 @@ nav {
     z-index: 1001;
 }
 
-/* Home Page */
-.home-page {
+/* Hero Section */
+.hero {
     height: 100vh;
     background: linear-gradient(rgba(35, 47, 62, 0.9), rgba(35, 47, 62, 0.8)), url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
     display: flex;
@@ -134,7 +129,7 @@ nav {
     position: relative;
 }
 
-.home-page::before {
+.hero::before {
     content: '';
     position: absolute;
     top: 0;
@@ -146,26 +141,26 @@ nav {
     z-index: 0;
 }
 
-.home-content {
+.hero-content {
     max-width: 900px;
     margin: 0 auto;
     position: relative;
     z-index: 1;
 }
 
-.home-content h1 {
+.hero-content h1 {
     font-size: 3.5rem;
     margin-bottom: 20px;
     line-height: 1.2;
     animation: fadeInDown 1s ease;
 }
 
-.home-content .highlight {
+.hero-content .highlight {
     color: var(--secondary);
     position: relative;
 }
 
-.home-content .highlight::after {
+.hero-content .highlight::after {
     content: '';
     position: absolute;
     bottom: -5px;
@@ -175,7 +170,7 @@ nav {
     background: var(--secondary);
 }
 
-.home-content p {
+.hero-content p {
     font-size: 1.5rem;
     margin: 0 auto 30px;
     max-width: 700px;
@@ -240,7 +235,7 @@ nav {
 }
 
 /* Sections */
-.section {
+section {
     padding: 100px 0;
 }
 
@@ -268,26 +263,24 @@ nav {
     background: var(--secondary);
 }
 
-/* About Page */
-.about-page .about-content {
+/* About Section */
+.about-content {
     display: flex;
     align-items: center;
     gap: 50px;
-    padding-top: 100px;
-    padding-bottom: 100px;
 }
 
-.about-page .about-text {
+.about-text {
     flex: 1;
 }
 
-.about-page .about-text h3 {
+.about-text h3 {
     font-size: 1.8rem;
     margin-bottom: 20px;
     color: var(--primary);
 }
 
-.about-page .about-text p {
+.about-text p {
     margin-bottom: 15px;
 }
 
@@ -309,7 +302,7 @@ nav {
     font-size: 1.2rem;
 }
 
-.about-page .about-image {
+.about-image {
     flex: 1;
     border-radius: 10px;
     overflow: hidden;
@@ -318,19 +311,19 @@ nav {
     transition: transform 0.3s;
 }
 
-.about-page .about-image:hover {
+.about-image:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 35px rgba(0,0,0,0.2);
 }
 
-.about-page .about-image img {
+.about-image img {
     width: 100%;
     height: auto;
     display: block;
     transition: transform 0.5s;
 }
 
-.about-page .about-image:hover img {
+.about-image:hover img {
     transform: scale(1.05);
 }
 
@@ -339,10 +332,9 @@ nav {
     display: inline-block;
 }
 
-/* Skills Page */
-.skills-page {
+/* Skills Section */
+.skills-section {
     background-color: #f0f2f5;
-    padding: 100px 0;
 }
 
 .skills-container {
@@ -425,11 +417,7 @@ nav {
     margin-right: 8px;
 }
 
-/* Projects Page */
-.projects-page {
-    padding: 100px 0;
-}
-
+/* Projects Section */
 .projects-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -501,10 +489,9 @@ nav {
     transform: translateY(-3px);
 }
 
-/* Experience Page */
-.experience-page {
+/* Experience Section */
+.experience-section {
     background-color: #f0f2f5;
-    padding: 100px 0;
 }
 
 .timeline {
@@ -577,11 +564,7 @@ nav {
     display: block;
 }
 
-/* Contact Page */
-.contact-page {
-    padding: 100px 0;
-}
-
+/* Contact Section */
 .contact-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -720,7 +703,7 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 992px) {
-    .about-page .about-content,
+    .about-content,
     .contact-container {
         grid-template-columns: 1fr;
     }
@@ -787,11 +770,11 @@ footer {
         font-size: 1.2rem;
     }
     
-    .home-content h1 {
+    .hero-content h1 {
         font-size: 2.5rem;
     }
     
-    .home-content p {
+    .hero-content p {
         font-size: 1.2rem;
     }
     
