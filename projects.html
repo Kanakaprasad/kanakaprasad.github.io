@@ -1,105 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | Kanakaprasad SD</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap">
-</head>
-<body>
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo"><i class="fab fa-aws"></i>Kanakaprasad<span>SD</span></div>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="skills.html">Skills</a></li>
-                    <li><a href="projects.html" class="active">Projects</a></li>
-                    <li><a href="experience.html">Experience</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-                <div class="menu-btn">
-                    <i class="fas fa-bars"></i>
+<section id="projects" class="projects">
+    <div class="container">
+        <h2>Recent Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Project">
                 </div>
-            </nav>
-        </div>
-    </header>
-
-    <section class="projects-page">
-        <div class="container">
-            <div class="section-title">
-                <h2>Recent Projects</h2>
+                <div class="project-content">
+                    <h3>E-commerce Platform Migration</h3>
+                    <p>Migrated a high-traffic e-commerce platform from on-premise to AWS, reducing costs by 40% and improving scalability.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">AWS</span>
+                        <span class="tech-tag">Terraform</span>
+                        <span class="tech-tag">Kubernetes</span>
+                        <span class="tech-tag">CI/CD</span>
+                    </div>
+                    <a href="#" class="btn btn-outline">View Details</a>
+                </div>
             </div>
-            <div class="projects-container">
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="CI/CD Pipeline">
-                    </div>
-                    <div class="project-content">
-                        <h3>Automated CI/CD Pipeline</h3>
-                        <p>Designed and implemented a secure CI/CD pipeline using AWS services and Git integration, enabling seamless deployments and reducing deployment time by 60%.</p>
-                        <div class="tech-stack">
-                            <span class="tech">AWS CodePipeline</span>
-                            <span class="tech">Git</span>
-                            <span class="tech">AWS Amplify</span>
-                            <span class="tech">EC2</span>
-                        </div>
-                    </div>
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Project">
                 </div>
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Security Infrastructure">
+                <div class="project-content">
+                    <h3>Serverless Data Pipeline</h3>
+                    <p>Built a serverless data processing pipeline on AWS Lambda and Kinesis for real-time analytics and reporting.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">AWS Lambda</span>
+                        <span class="tech-tag">Kinesis</span>
+                        <span class="tech-tag">S3</span>
+                        <span class="tech-tag">Python</span>
                     </div>
-                    <div class="project-content">
-                        <h3>Cloud Security Enhancement</h3>
-                        <p>Implemented comprehensive security measures using AWS Security Hub, WAF, and IAM policies to protect infrastructure, reducing security incidents by 90%.</p>
-                        <div class="tech-stack">
-                            <span class="tech">AWS Security Hub</span>
-                            <span class="tech">WAF</span>
-                            <span class="tech">IAM</span>
-                            <span class="tech">ACM</span>
-                        </div>
-                    </div>
+                    <a href="#" class="btn btn-outline">View Details</a>
                 </div>
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="High Availability Setup">
+            </div>
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Project">
+                </div>
+                <div class="project-content">
+                    <h3>Containerized Microservices</h3>
+                    <p>Designed and deployed a containerized microservices architecture on EKS with automated CI/CD pipelines.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Kubernetes</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">GitLab CI</span>
+                        <span class="tech-tag">Helm</span>
                     </div>
-                    <div class="project-content">
-                        <h3>High Availability Architecture</h3>
-                        <p>Designed and deployed a highly available infrastructure using ELB, Route 53, and multiple availability zones, achieving 99.99% uptime for critical applications.</p>
-                        <div class="tech-stack">
-                            <span class="tech">ELB</span>
-                            <span class="tech">Route 53</span>
-                            <span class="tech">CloudFront</span>
-                            <span class="tech">EC2</span>
-                        </div>
-                    </div>
+                    <a href="#" class="btn btn-outline">View Details</a>
                 </div>
             </div>
         </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="social-icons">
-                <a href="https://www.linkedin.com/in/kanakaprasad-sd/" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-aws"></i></a>
-            </div>
-            <p class="copyright">&copy; 2024 <span>Kanakaprasad SD</span>. All rights reserved.</p>
-            <p class="copyright">AWS Cloud Engineer Portfolio</p>
-        </div>
-    </footer>
-    
-    <div class="scroll-top">
-        <i class="fas fa-arrow-up"></i>
     </div>
-
-    <script src="js/main.js"></script>
-</body>
-</html>
+</section>
