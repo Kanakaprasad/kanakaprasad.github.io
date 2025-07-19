@@ -1,87 +1,150 @@
-// Load sections dynamically
-document.addEventListener('DOMContentLoaded', function() {
-    // Array of section files to load
-    const sections = [
-        'about.html',
-        'services.html',
-        'skills.html',
-        'experience.html',
-        'projects.html',
-        'contact.html'
-    ];
+// Load content into sections
+window.addEventListener('DOMContentLoaded', () => {
+    loadSection('about', 'about.html');
+    loadSection('skills', 'skills.html');
+    loadSection('projects', 'projects.html');
+    loadSection('experience', 'experience.html');
+    loadSection('contact', 'contact.html');
     
-    const contentContainer = document.getElementById('content');
+    // Initialize page functionality
+    initPage();
+});
+
+function loadSection(sectionId, url) {
+    fetch(url)
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById(sectionId).innerHTML = data;
+            // Initialize animations after content loads
+            animateOnScroll();
+        })
+        .catch(error => {
+            console.error(`Error loading ${url}:`, error);
+        });
+}
+
+function initPage() {
+    // Mobile Menu Toggle
+    const menuBtn = document.querySelector('.menu-btn');
+    const navLinks = document.querySelector('.nav-links');
     
-    // Load each section file
-    sections.forEach(section => {
-        fetch(section)
-            .then(response => response.text())
-            .then(data => {
-                contentContainer.innerHTML += data;
-            })
-            .catch(error => {
-                console.error('Error loading section:', error);
-            });
+    if (menuBtn) {
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = menuBtn.querySelector('i');
+            if (icon) {
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
+            }
+        });
+    }
+    
+    // Close menu when clicking a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            const icon = document.querySelector('.menu-btn i');
+            if (icon) {
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            }
+        });
+    });
+    
+    // Form Submission
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            contactForm.reset();
+        });
+    }
+    
+    // Smooth Scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Close mobile menu if open
+            if (navLinks) navLinks.classList.remove('active');
+            const icon = document.querySelector('.menu-btn i');
+            if (icon) {
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            }
+            
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
     });
     
     // Header scroll effect
-    window.addEventListener('scroll', function() {
-        const header = document.getElementById('header');
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('header');
+        const scrollTopBtn = document.querySelector('.scroll-top');
+        
+        if (header && window.scrollY > 100) {
+            header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
+            header.style.background = 'rgba(19, 26, 34, 0.95)';
+        } else if (header) {
+            header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            header.style.background = 'var(--primary)';
+        }
+        
+        // Show/hide scroll to top button
+        if (scrollTopBtn) {
+            if (window.scrollY > 500) {
+                scrollTopBtn.classList.add('active');
+            } else {
+                scrollTopBtn.classList.remove('active');
+            }
         }
     });
     
-    // Mobile menu toggle
-    const mobileMenu = document.querySelector('.mobile-menu');
-    const nav = document.getElementById('nav');
-    
-    mobileMenu.addEventListener('click', function() {
-        nav.classList.toggle('active');
-        this.querySelector('i').classList.toggle('fa-bars');
-        this.querySelector('i').classList.toggle('fa-times');
-    });
-    
-    // Close mobile menu when clicking on a link
-    const navLinks = document.querySelectorAll('nav ul li a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            nav.classList.remove('active');
-            mobileMenu.querySelector('i').classList.add('fa-bars');
-            mobileMenu.querySelector('i').classList.remove('fa-times');
-        });
-    });
-    
-    // Animate skill bars when they come into view
-    const animateSkillBars = () => {
-        const skillBars = document.querySelectorAll('.skill-progress');
-        skillBars.forEach(bar => {
-            const barPosition = bar.getBoundingClientRect().top;
-            const screenPosition = window.innerHeight / 1.3;
-            
-            if (barPosition < screenPosition) {
-                const width = bar.style.width;
-                bar.style.width = '0';
-                setTimeout(() => {
-                    bar.style.width = width;
-                }, 300);
-            }
-        });
-    };
-    
-    // Initialize skill bars
-    window.addEventListener('load', animateSkillBars);
-    window.addEventListener('scroll', animateSkillBars);
-    
-    // Form submission
-    const contactForm = document.querySelector('.contact-form form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! I will get back to you soon.');
-            this.reset();
+    // Scroll to top functionality
+    const scrollTopBtn = document.querySelector('.scroll-top');
+    if (scrollTopBtn) {
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
     }
-});
+    
+    // Set initial styles for animated elements
+    const animatedElements = document.querySelectorAll('.about-content, .skill-card, .project-card, .timeline-item, .contact-container');
+    animatedElements.forEach(element => {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(50px)';
+        element.style.transition = 'all 0.8s ease';
+    });
+    
+    // Initial animation check
+    animateOnScroll();
+    
+    // Animate elements when scrolling
+    window.addEventListener('scroll', animateOnScroll);
+}
+
+// Animation on scroll
+function animateOnScroll() {
+    const elements = document.querySelectorAll('.about-content, .skill-card, .project-card, .timeline-item, .contact-container');
+    
+    elements.forEach(element => {
+        if (!element) return;
+        
+        const elementPosition = element.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.3;
+        
+        if (elementPosition < screenPosition) {
+            element.style.opacity = '1';
+            element.style.transform = 'translateY(0)';
+        }
+    });
+}
