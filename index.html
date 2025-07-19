@@ -1,15 +1,55 @@
-<!DOCTYPE html>
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kanakaprasad SD - AWS Cloud Engineer & DevOps Specialist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="aws-logo.png" alt="AWS Logo">
+            <img src="https://freepnglogo.com/images/aws-logo.png" alt="AWS Logo">
             <h1>Kanakaprasad SD</h1>
         </div>
         <nav>
@@ -40,52 +80,63 @@
             <h2>Technical Skills</h2>
             <div class="skills-grid">
                 <div class="skill-card">
-                    <img src="aws-icon.png" alt="AWS Icon">
+                    <i class="fab fa-aws"></i>
                     <h3>AWS</h3>
                     <ul>
-                        <li>EC2, ELB, EBS, S3, EFS, Glacier, VPC, Route 53, IAM, CloudFront, WAF, Lambda, SNS, CloudWatch, ACM, Amplify</li>
+                        <li>EC2</li>
+                        <li>ELB</li>
+                        <li>EBS</li>
+                        <li>S3</li>
+                        <li>EFS</li>
+                        <li>Glacier</li>
+                        <li>VPC</li>
+                        <li>Route 53</li>
+                        <li>IAM</li>
+                        <li>CloudFront</li>
+                        <li>WAF</li>
+                        <li>Lambda</li>
+                        <li>SNS</li>
+                        <li>CloudWatch</li>
+                        <li>ACM</li>
+                        <li>Amplify</li>
                     </ul>
                 </div>
                 <div class="skill-card">
-                    <img src="devops-icon.png" alt="DevOps Icon">
-                    <h3>DevOps Tools</h3>
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Security & Compliance</h3>
                     <ul>
-                        <li>Git, Jenkins, Docker, Kubernetes (basic), Ansible, SonarQube</li>
+                        <li>AWS Security Hub</li>
+                        <li>WAF</li>
+                        <li>IAM Policy Management</li>
+                        <li>ACM</li>
                     </ul>
                 </div>
                 <div class="skill-card">
-                    <img src="cicd-icon.png" alt="CI/CD Icon">
-                    <h3>CI/CD</h3>
+                    <i class="fas fa-code-branch"></i>
+                    <h3>DevOps & CI/CD</h3>
                     <ul>
-                        <li>Git, Jenkins, CodeDeploy – Pipeline setup & automation</li>
+                        <li>Git</li>
+                        <li>Jenkins</li>
+                        <li>Docker</li>
+                        <li>Kubernetes (basic)</li>
+                        <li>Ansible</li>
+                        <li>SonarQube</li>
+                        <li>CodeDeploy</li>
                     </ul>
                 </div>
                 <div class="skill-card">
-                    <img src="security-icon.png" alt="Security Icon">
-                    <h3>Monitoring & Security</h3>
+                    <i class="fas fa-tools"></i>
+                    <h3>Tools & Technologies</h3>
                     <ul>
-                        <li>New Relic, AWS Security Hub, WAF, IAM Policy Management</li>
-                    </ul>
-                </div>
-                <div class="skill-card">
-                    <img src="os-icon.png" alt="OS Icon">
-                    <h3>Operating Systems</h3>
-                    <ul>
-                        <li>Linux (RedHat, Ubuntu, Amazon Linux), Windows</li>
-                    </ul>
-                </div>
-                <div class="skill-card">
-                    <img src="scripting-icon.png" alt="Scripting Icon">
-                    <h3>Scripting</h3>
-                    <ul>
-                        <li>Shell Scripting, Python (basic)</li>
-                    </ul>
-                </div>
-                <div class="skill-card">
-                    <img src="tools-icon.png" alt="Tools Icon">
-                    <h3>Other Tools</h3>
-                    <ul>
-                        <li>WinSCP (SFTP/FTP), Apache, Nginx, Tomcat</li>
+                        <li>New Relic</li>
+                        <li>WinSCP (SFTP/FTP)</li>
+                        <li>Apache</li>
+                        <li>Nginx</li>
+                        <li>Tomcat</li>
+                        <li>Shell Scripting</li>
+                        <li>Python (basic)</li>
+                        <li>Linux (RedHat, Ubuntu, Amazon Linux)</li>
+                        <li>Windows</li>
                     </ul>
                 </div>
             </div>
@@ -94,7 +145,7 @@
             <h2>Recent Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <img src="project1.jpg" alt="Project 1">
+                    <img src="https://via.placeholder.com/300x200" alt="Project 1">
                     <h3>Automated CI/CD Pipeline</h3>
                     <p>Achieved a 60% reduction in deployment time by implementing a fully automated CI/CD pipeline using AWS CodePipeline, Git, AWS Amplify, and EC2 instances.</p>
                     <div class="tags">
@@ -105,7 +156,7 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="project2.jpg" alt="Project 2">
+                    <img src="https://via.placeholder.com/300x200" alt="Project 2">
                     <h3>Cloud Security Enhancement</h3>
                     <p>Reduced security incidents by 90% through the implementation of AWS Security Hub, WAF, IAM policies, and ACM for certificate management.</p>
                     <div class="tags">
@@ -116,7 +167,7 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="project3.jpg" alt="Project 3">
+                    <img src="https://via.placeholder.com/300x200" alt="Project 3">
                     <h3>High Availability Architecture</h3>
                     <p>Designed and deployed a highly available architecture achieving 99.99% uptime using ELB, Route 53, CloudFront, and EC2 instances.</p>
                     <div class="tags">
@@ -159,10 +210,10 @@
             <h2>Get In Touch</h2>
             <div class="contact-grid">
                 <div class="contact-info">
-                    <p><img src="email-icon.png" alt="Email"> kanakaprasad.2001@gmail.com</p>
-                    <p><img src="linkedin-icon.png" alt="LinkedIn"> <a href="[invalid url, do not cite]
-                    <p><img src="github-icon.png" alt="GitHub"> <a href="[invalid url, do not cite]
-                    <p><img src="location-icon.png" alt="Location"> Bengaluru, Karnataka, India</p>
+                    <p><i class="fas fa-envelope"></i> kanakaprasad.2001@gmail.com</p>
+                    <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/kanakaprasad-sd/">LinkedIn Profile</a></p>
+                    <p><i class="fab fa-github"></i> <a href="https://github.com/Kanakaprasad">GitHub Profile</a></p>
+                    <p><i class="fas fa-map-marker-alt"></i> Bengaluru, Karnataka, India</p>
                 </div>
                 <div class="contact-form">
                     <form action="#" method="post">
@@ -177,7 +228,7 @@
         </section>
     </main>
     <footer>
-        <p>&copy; 2025 Kanakaprasad SD. All rights reserved.</p>
+        <p>© 2025 Kanakaprasad SD. All rights reserved.</p>
     </footer>
 </body>
 </html>
