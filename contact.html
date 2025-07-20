@@ -44,6 +44,9 @@
         </div>
         <div class="contact-form">
             <form id="contactForm" action="https://formspree.io/f/xdkdanwe" method="POST">
+                <!-- Honeypot field for spam prevention -->
+                <input type="text" name="_gotcha" style="display:none">
+                
                 <div class="form-group">
                     <input type="text" name="name" placeholder="Your Name" required>
                 </div>
