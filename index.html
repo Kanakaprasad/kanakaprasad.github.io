@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kanakaprasad SD | AWS & DevOps Engineer</title>
-    <!-- Favicon - Note: For true round favicon, you need to edit the image file itself -->
+    <!-- Favicon -->
     <link rel="icon" href="assets/avatar.png" type="image/png">
     <link rel="apple-touch-icon" href="assets/avatar.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family;600&display=swap">
+    <link rel.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Enhanced Header Logo with Avatar - No Yellow Border */
+        /* Enhanced Header Logo with Avatar */
         .logo {
             display: flex;
             align-items: center;
@@ -27,7 +27,6 @@
             height: 40px;
             border-radius: 50%;
             margin-right: 12px;
-            /* Removed yellow border and box-shadow */
             object-fit: cover;
             transition: all 0.3s ease;
         }
@@ -115,6 +114,8 @@
             z-index: 1001;
             transition: all 0.3s ease;
             padding: 5px;
+            background: none;
+            border: none;
         }
         
         .menu-btn:hover {
@@ -140,33 +141,16 @@
             .nav-links a {
                 font-size: 1.05rem;
             }
-        }
-        
-        /* Tablet Navigation */
-        @media (min-width: 481px) and (max-width: 768px) {
-            .logo {
-                font-size: 1.1rem;
-            }
             
-            .logo-avatar {
-                width: 36px;
-                height: 36px;
-                margin-right: 10px;
-            }
-            
-            .nav-links li {
-                margin-left: 20px;
-            }
-            
-            .nav-links a {
-                font-size: 0.95rem;
+            .menu-btn {
+                display: none !important;
             }
         }
         
-        /* Mobile Navigation - KEEP TEXT VISIBLE */
+        /* Mobile Navigation */
         @media (max-width: 768px) {
             .menu-btn {
-                display: block;
+                display: block !important;
             }
             
             .logo {
@@ -179,7 +163,6 @@
                 margin-right: 8px;
             }
             
-            /* KEEP LOGO TEXT VISIBLE ON MOBILE */
             .logo-text {
                 display: flex !important;
             }
@@ -188,16 +171,16 @@
                 position: fixed;
                 top: 0;
                 left: -100%;
-                background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
-                width: 75%;
+                background: linear-gradient(135deg, #232f3e 0%, #131a22 100%);
+                width: 80%;
                 height: 100vh;
                 flex-direction: column;
                 align-items: flex-start;
                 padding: 80px 25px 25px;
                 transition: all 0.5s ease;
                 z-index: 1000;
-                box-shadow: 5px 0 20px rgba(0,0,0,0.3);
-                backdrop-filter: blur(10px);
+                box-shadow: 5px 0 20px rgba(0,0,0,0.5);
+                overflow-y: auto;
             }
             
             .nav-links.active {
@@ -205,27 +188,27 @@
             }
             
             .nav-links li {
-                margin: 0 0 20px 0;
+                margin: 0 0 15px 0;
                 width: 100%;
             }
             
             .nav-links a {
                 display: block;
-                padding: 15px 0;
-                font-size: 1.1rem;
+                padding: 15px 10px;
+                font-size: 1.2rem;
                 border-bottom: 1px solid rgba(255, 153, 0, 0.2);
                 transition: all 0.3s ease;
+                border-radius: 5px;
             }
             
             .nav-links a:hover {
-                padding-left: 15px;
+                padding-left: 20px;
                 color: #ff9900;
                 background: rgba(255, 153, 0, 0.1);
-                border-radius: 5px;
             }
         }
         
-        /* Very Small Mobile Devices */
+        /* Very Small Mobile */
         @media (max-width: 480px) {
             .logo {
                 font-size: 0.9rem;
@@ -237,66 +220,25 @@
                 margin-right: 6px;
             }
             
-            nav {
-                padding: 10px 0;
-                min-height: 50px;
+            .nav-links {
+                width: 85%;
+                padding: 70px 20px 20px;
             }
             
-            header {
-                min-height: 50px;
+            .nav-links a {
+                font-size: 1.1rem;
+                padding: 12px 8px;
             }
         }
         
-        /* Header scroll effect enhancement */
-        .header-scrolled {
-            background: rgba(35, 47, 62, 0.95) !important;
-            backdrop-filter: blur(10px);
-            min-height: 55px;
-        }
-        
-        .header-scrolled nav {
-            padding: 8px 0;
-            min-height: 55px;
-        }
-        
-        .header-scrolled .logo-avatar {
-            width: 35px;
-            height: 35px;
-        }
-        
-        /* Smooth transitions for all elements */
-        * {
-            transition: all 0.3s ease;
-        }
-        
-        /* Hero section padding adjustment for new header height */
-        .hero {
-            padding-top: 80px;
-        }
-        
-        @media (max-width: 480px) {
-            .hero {
-                padding-top: 70px;
-            }
-        }
-        
-        /* Enhanced mobile menu icon animation */
-        .menu-btn i {
-            transition: transform 0.3s ease;
-        }
-        
-        .menu-btn.active i {
-            transform: rotate(90deg);
-        }
-        
-        /* Overlay for mobile menu */
+        /* Mobile Menu Overlay */
         .nav-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100vh;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.6);
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s ease;
@@ -307,14 +249,34 @@
             opacity: 1;
             visibility: visible;
         }
+        
+        /* Menu Icon Animation */
+        .menu-btn i {
+            transition: transform 0.3s ease;
+        }
+        
+        .menu-btn.active i {
+            transform: rotate(90deg);
+        }
+        
+        /* Hero section padding adjustment */
+        .hero {
+            padding-top: 80px;
+        }
+        
+        @media (max-width: 480px) {
+            .hero {
+                padding-top: 70px;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- Navigation Overlay for Mobile -->
+    <!-- Navigation Overlay -->
     <div class="nav-overlay" id="navOverlay"></div>
     
     <!-- Header -->
-    <header id="header">
+    <header>
         <div class="container">
             <nav>
                 <a href="#home" class="logo">
@@ -331,9 +293,9 @@
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
-                <div class="menu-btn" id="menuBtn">
+                <button class="menu-btn" id="menuBtn">
                     <i class="fas fa-bars"></i>
-                </div>
+                </button>
             </nav>
         </div>
     </header>
@@ -398,74 +360,5 @@
     </div>
 
     <script src="main.js"></script>
-    
-    <!-- Enhanced Mobile Menu JavaScript -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuBtn = document.getElementById('menuBtn');
-            const navLinks = document.getElementById('navLinks');
-            const navOverlay = document.getElementById('navOverlay');
-            const header = document.getElementById('header');
-            
-            // Mobile menu toggle
-            if (menuBtn) {
-                menuBtn.addEventListener('click', function() {
-                    navLinks.classList.toggle('active');
-                    navOverlay.classList.toggle('active');
-                    menuBtn.classList.toggle('active');
-                    
-                    const icon = menuBtn.querySelector('i');
-                    if (icon) {
-                        if (navLinks.classList.contains('active')) {
-                            icon.classList.remove('fa-bars');
-                            icon.classList.add('fa-times');
-                        } else {
-                            icon.classList.remove('fa-times');
-                            icon.classList.add('fa-bars');
-                        }
-                    }
-                });
-            }
-            
-            // Close menu when clicking overlay
-            if (navOverlay) {
-                navOverlay.addEventListener('click', function() {
-                    navLinks.classList.remove('active');
-                    navOverlay.classList.remove('active');
-                    menuBtn.classList.remove('active');
-                    
-                    const icon = menuBtn.querySelector('i');
-                    if (icon) {
-                        icon.classList.remove('fa-times');
-                        icon.classList.add('fa-bars');
-                    }
-                });
-            }
-            
-            // Close menu when clicking nav links
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', function() {
-                    navLinks.classList.remove('active');
-                    navOverlay.classList.remove('active');
-                    menuBtn.classList.remove('active');
-                    
-                    const icon = menuBtn.querySelector('i');
-                    if (icon) {
-                        icon.classList.remove('fa-times');
-                        icon.classList.add('fa-bars');
-                    }
-                });
-            });
-            
-            // Header scroll effect
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 50) {
-                    header.classList.add('header-scrolled');
-                } else {
-                    header.classList.remove('header-scrolled');
-                }
-            });
-        });
-    </script>
 </body>
 </html>
