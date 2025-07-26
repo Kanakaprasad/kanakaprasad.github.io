@@ -4,19 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kanakaprasad SD | AWS & DevOps Engineer</title>
-    <!-- Favicon - Round Shape -->
+    <!-- Favicon - Note: For true round favicon, you need to edit the image file itself -->
     <link rel="icon" href="assets/avatar.png" type="image/png">
     <link rel="apple-touch-icon" href="assets/avatar.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family;600&display=swap">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Favicon Round Shape Styling */
-        link[rel="icon"] {
-            border-radius: 50%;
-        }
-        
-        /* Enhanced Header Logo with Avatar */
+        /* Enhanced Header Logo with Avatar - No Yellow Border */
         .logo {
             display: flex;
             align-items: center;
@@ -24,103 +19,31 @@
             font-size: 1.2rem;
             font-weight: 700;
             transition: all 0.3s ease;
+            text-decoration: none;
         }
         
         .logo-avatar {
-            width: 35px;
-            height: 35px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             margin-right: 12px;
-            border: 2px solid #ff9900;
-            ;
-            box-shadow: 0 2px 8px rgba(255, 153, 0, 0.3);
+            /* Removed yellow border and box-shadow */
+            object-fit: cover;
+            transition: all 0.3s ease;
         }
         
         .logo:hover .logo-avatar {
             transform: scale(1.1) rotate(5deg);
-            border-color: white;
-            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
         }
         
         .logo-text {
             display: flex;
             align-items: center;
+            font-family: 'Montserrat', sans-serif;
         }
         
         .logo-text span {
             color: #ff9900;
-        }
-        
-        /* Mobile Logo Optimizations */
-        @media (max-width: 768px) {
-            .logo {
-                font-size: 1.1rem;
-            }
-            
-            .logo-avatar {
-                width: 32px;
-                height: 32px;
-                margin-right: 10px;
-            }
-            
-            .logo-text {
-                display: none; /* Hide text on very small screens, show only avatar */
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .logo-avatar {
-                width: 28px;
-                height: 28px;
-                margin-right: 8px;
-            }
-        }
-        
-        /* Enhanced Navigation for Mobile */
-        @media (max-width: 768px) {
-            .nav-links {
-                position: fixed;
-                top: 0;
-                left: -100%;
-                background: var(--primary);
-                width: 70%;
-                height: 100vh;
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 80px 20px 20px;
-                transition: all 0.5s ease;
-                z-index: 1000;
-                box-shadow: 5px 0 15px rgba(0,0,0,0.3);
-            }
-            
-            .nav-links.active {
-                left: 0;
-            }
-            
-            .nav-links li {
-                margin: 15px 0;
-                width: 100%;
-            }
-            
-            .nav-links a {
-                display: block;
-                padding: 10px 0;
-                font-size: 1.2rem;
-                border-bottom: 1px solid rgba(255, 153, 0, 0.2);
-            }
-            
-            .menu-btn {
-                display: block;
-                color: white;
-                font-size: 1.5rem;
-                cursor: pointer;
-                z-index: 1001;
-                transition: transform 0.3s ease;
-            }
-            
-            .menu-btn:hover {
-                transform: scale(1.1);
-            }
         }
         
         /* Enhanced Header Styling */
@@ -130,7 +53,7 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            min-height: 48px;
+            min-height: 60px;
             box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
             transition: all 0.4s ease;
         }
@@ -139,7 +62,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 0;
+            padding: 12px 0;
+            min-height: 60px;
         }
         
         .nav-links {
@@ -150,17 +74,18 @@
         }
         
         .nav-links li {
-            margin-left: 18px;
+            margin-left: 25px;
         }
         
         .nav-links a {
             color: white;
             text-decoration: none;
             font-size: 1rem;
-            transition: color 0.3s;
+            transition: all 0.3s ease;
             font-weight: 500;
             position: relative;
-            padding: 3px 0;
+            padding: 8px 0;
+            font-family: 'Montserrat', sans-serif;
         }
         
         .nav-links a::after {
@@ -171,53 +96,234 @@
             width: 0;
             height: 2px;
             background: #ff9900;
-            transition: width 0.3s;
+            transition: width 0.3s ease;
         }
         
         .nav-links a:hover::after {
             width: 100%;
         }
         
+        .nav-links a:hover {
+            color: #ff9900;
+        }
+        
         .menu-btn {
             display: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1001;
+            transition: all 0.3s ease;
+            padding: 5px;
+        }
+        
+        .menu-btn:hover {
+            color: #ff9900;
+            transform: scale(1.1);
         }
         
         /* Desktop Navigation */
         @media (min-width: 769px) {
+            .logo {
+                font-size: 1.3rem;
+            }
+            
+            .logo-avatar {
+                width: 42px;
+                height: 42px;
+            }
+            
+            .nav-links li {
+                margin-left: 30px;
+            }
+            
+            .nav-links a {
+                font-size: 1.05rem;
+            }
+        }
+        
+        /* Tablet Navigation */
+        @media (min-width: 481px) and (max-width: 768px) {
+            .logo {
+                font-size: 1.1rem;
+            }
+            
+            .logo-avatar {
+                width: 36px;
+                height: 36px;
+                margin-right: 10px;
+            }
+            
+            .nav-links li {
+                margin-left: 20px;
+            }
+            
+            .nav-links a {
+                font-size: 0.95rem;
+            }
+        }
+        
+        /* Mobile Navigation - KEEP TEXT VISIBLE */
+        @media (max-width: 768px) {
             .menu-btn {
-                display: none;
+                display: block;
             }
             
-            .nav-links {
-                display: flex !important;
-                position: static;
-                background: none;
-                width: auto;
-                height: auto;
-                flex-direction: row;
-                align-items: center;
-                padding: 0;
-                box-shadow: none;
+            .logo {
+                font-size: 1rem;
             }
             
+            .logo-avatar {
+                width: 32px;
+                height: 32px;
+                margin-right: 8px;
+            }
+            
+            /* KEEP LOGO TEXT VISIBLE ON MOBILE */
             .logo-text {
                 display: flex !important;
             }
+            
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+                width: 75%;
+                height: 100vh;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 80px 25px 25px;
+                transition: all 0.5s ease;
+                z-index: 1000;
+                box-shadow: 5px 0 20px rgba(0,0,0,0.3);
+                backdrop-filter: blur(10px);
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 0 0 20px 0;
+                width: 100%;
+            }
+            
+            .nav-links a {
+                display: block;
+                padding: 15px 0;
+                font-size: 1.1rem;
+                border-bottom: 1px solid rgba(255, 153, 0, 0.2);
+                transition: all 0.3s ease;
+            }
+            
+            .nav-links a:hover {
+                padding-left: 15px;
+                color: #ff9900;
+                background: rgba(255, 153, 0, 0.1);
+                border-radius: 5px;
+            }
+        }
+        
+        /* Very Small Mobile Devices */
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 0.9rem;
+            }
+            
+            .logo-avatar {
+                width: 28px;
+                height: 28px;
+                margin-right: 6px;
+            }
+            
+            nav {
+                padding: 10px 0;
+                min-height: 50px;
+            }
+            
+            header {
+                min-height: 50px;
+            }
+        }
+        
+        /* Header scroll effect enhancement */
+        .header-scrolled {
+            background: rgba(35, 47, 62, 0.95) !important;
+            backdrop-filter: blur(10px);
+            min-height: 55px;
+        }
+        
+        .header-scrolled nav {
+            padding: 8px 0;
+            min-height: 55px;
+        }
+        
+        .header-scrolled .logo-avatar {
+            width: 35px;
+            height: 35px;
+        }
+        
+        /* Smooth transitions for all elements */
+        * {
+            transition: all 0.3s ease;
+        }
+        
+        /* Hero section padding adjustment for new header height */
+        .hero {
+            padding-top: 80px;
+        }
+        
+        @media (max-width: 480px) {
+            .hero {
+                padding-top: 70px;
+            }
+        }
+        
+        /* Enhanced mobile menu icon animation */
+        .menu-btn i {
+            transition: transform 0.3s ease;
+        }
+        
+        .menu-btn.active i {
+            transform: rotate(90deg);
+        }
+        
+        /* Overlay for mobile menu */
+        .nav-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+        
+        .nav-overlay.active {
+            opacity: 1;
+            visibility: visible;
         }
     </style>
 </head>
 <body>
+    <!-- Navigation Overlay for Mobile -->
+    <div class="nav-overlay" id="navOverlay"></div>
+    
     <!-- Header -->
-    <header>
+    <header id="header">
         <div class="container">
             <nav>
-                <div class="logo">
+                <a href="#home" class="logo">
                     <img src="assets/avatar.png" alt="Kanakaprasad SD" class="logo-avatar">
                     <div class="logo-text">
                         Kanakaprasad<span>SD</span>
                     </div>
-                </div>
-                <ul class="nav-links">
+                </a>
+                <ul class="nav-links" id="navLinks">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#skills">Skills</a></li>
@@ -225,7 +331,7 @@
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
-                <div class="menu-btn">
+                <div class="menu-btn" id="menuBtn">
                     <i class="fas fa-bars"></i>
                 </div>
             </nav>
@@ -292,5 +398,74 @@
     </div>
 
     <script src="main.js"></script>
+    
+    <!-- Enhanced Mobile Menu JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuBtn = document.getElementById('menuBtn');
+            const navLinks = document.getElementById('navLinks');
+            const navOverlay = document.getElementById('navOverlay');
+            const header = document.getElementById('header');
+            
+            // Mobile menu toggle
+            if (menuBtn) {
+                menuBtn.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                    navOverlay.classList.toggle('active');
+                    menuBtn.classList.toggle('active');
+                    
+                    const icon = menuBtn.querySelector('i');
+                    if (icon) {
+                        if (navLinks.classList.contains('active')) {
+                            icon.classList.remove('fa-bars');
+                            icon.classList.add('fa-times');
+                        } else {
+                            icon.classList.remove('fa-times');
+                            icon.classList.add('fa-bars');
+                        }
+                    }
+                });
+            }
+            
+            // Close menu when clicking overlay
+            if (navOverlay) {
+                navOverlay.addEventListener('click', function() {
+                    navLinks.classList.remove('active');
+                    navOverlay.classList.remove('active');
+                    menuBtn.classList.remove('active');
+                    
+                    const icon = menuBtn.querySelector('i');
+                    if (icon) {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+            }
+            
+            // Close menu when clicking nav links
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', function() {
+                    navLinks.classList.remove('active');
+                    navOverlay.classList.remove('active');
+                    menuBtn.classList.remove('active');
+                    
+                    const icon = menuBtn.querySelector('i');
+                    if (icon) {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+            });
+            
+            // Header scroll effect
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    header.classList.add('header-scrolled');
+                } else {
+                    header.classList.remove('header-scrolled');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
