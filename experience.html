@@ -8,20 +8,22 @@
                 <div class="experience-header">
                     <h3>Cloud Systems Administrator</h3>
                     <span class="date">Nov 2024 - Present</span>
-                    <div class="duration-badge">Current Position</div>
+                    <div class="duration-badge current">Current Position</div>
                 </div>
                 <h4>beGalileo® (via Carveniche Technologies), Bengaluru</h4>
+                <p class="promotion-note"><i class="fas fa-arrow-up"></i> Promoted from Cloud Infrastructure & Tech Support Engineer</p>
                 <ul class="experience-list">
                     <li>Designed and optimized AWS infrastructure for scalability and high availability</li>
                     <li>Managed EC2 instances, ELB configurations, and static Elastic IPs</li>
                     <li>Implemented Route 53 DNS management with SSL/TLS via ACM</li>
-                    <li>Enhanced security using AWS Security Hub, WAF, and CloudFront</li>
+                     AWS Security Hub, WAF, and CloudFront</li>
                     <li>Built CI/CD pipelines and managed web apps with AWS Amplify</li>
                     <li>Monitored systems with New Relic and performed Linux administration</li>
                 </ul>
                 <div class="tech-stack">
                     <span class="tech">AWS Amplify</span>
-                    <span class="tech"><span class="tech">Route 53</span>
+                    <span class="tech">EC2</span>
+                    <span class="tech">Route 53</span>
                     <span class="tech">ELB</span>
                     <span class="tech">Security Hub</span>
                     <span class="tech">WAF</span>
@@ -41,6 +43,7 @@
                     <div class="duration-badge">8 months</div>
                 </div>
                 <h4>beGalileo® (via Carveniche Technologies), Bengaluru</h4>
+                <p class="entry-note"><i class="fas fa-play"></i> Started career in cloud engineering</p>
                 <ul class="experience-list">
                     <li>Provided technical support for AWS infrastructure and performance optimization</li>
                     <li>Managed secure file transfers using WinSCP (SFTP/FTP)</li>
@@ -233,13 +236,39 @@
     letter-spacing: 0.5px;
 }
 
+.duration-badge.current {
+    background: linear-gradient(45deg, #28a745, #20c997);
+}
+
 .timeline-content h4 {
     color: #666;
     font-size: 1.1rem;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     font-weight: 500;
     padding-left: 15px;
     border-left: 3px solid #ff9900;
+}
+
+/* Promotion and Entry Notes */
+.promotion-note, .entry-note {
+    background: linear-gradient(45deg, rgba(255, 153, 0, 0.1), rgba(255, 153, 0, 0.05));
+    border: 1px solid rgba(255, 153, 0, 0.3);
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin: 10px 0 20px 0;
+    font-size: 0.9rem;
+    color: #232f3e;
+    font-weight: 600;
+}
+
+.promotion-note i {
+    color: #28a745;
+    margin-right: 8px;
+}
+
+.entry-note i {
+    color: #ff9900;
+    margin-right: 8px;
 }
 
 .experience-list {
@@ -327,8 +356,14 @@
     
     .timeline-content h4 {
         font-size: 1rem;
-        margin-bottom: 15px;
+        margin-bottom: 12px;
         padding-left: 12px;
+    }
+    
+    .promotion-note, .entry-note {
+        font-size: 0.85rem;
+        padding: 6px 10px;
+        margin: 8px 0 15px 0;
     }
     
     .experience-list li {
@@ -386,6 +421,11 @@
     
     .timeline-content h4 {
         font-size: 0.95rem;
+    }
+    
+    .promotion-note, .entry-note {
+        font-size: 0.8rem;
+        padding: 5px 8px;
     }
     
     .experience-list li {
