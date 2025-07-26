@@ -4,18 +4,219 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kanakaprasad SD | AWS & DevOps Engineer</title>
-    <!-- Favicon -->
+    <!-- Favicon - Round Shape -->
     <link rel="icon" href="assets/avatar.png" type="image/png">
+    <link rel="apple-touch-icon" href="assets/avatar.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Favicon Round Shape Styling */
+        link[rel="icon"] {
+            border-radius: 50%;
+        }
+        
+        /* Enhanced Header Logo with Avatar */
+        .logo {
+            display: flex;
+            align-items: center;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+        
+        .logo-avatar {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            margin-right: 12px;
+            border: 2px solid #ff9900;
+            ;
+            box-shadow: 0 2px 8px rgba(255, 153, 0, 0.3);
+        }
+        
+        .logo:hover .logo-avatar {
+            transform: scale(1.1) rotate(5deg);
+            border-color: white;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+        }
+        
+        .logo-text {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-text span {
+            color: #ff9900;
+        }
+        
+        /* Mobile Logo Optimizations */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 1.1rem;
+            }
+            
+            .logo-avatar {
+                width: 32px;
+                height: 32px;
+                margin-right: 10px;
+            }
+            
+            .logo-text {
+                display: none; /* Hide text on very small screens, show only avatar */
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo-avatar {
+                width: 28px;
+                height: 28px;
+                margin-right: 8px;
+            }
+        }
+        
+        /* Enhanced Navigation for Mobile */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                background: var(--primary);
+                width: 70%;
+                height: 100vh;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 80px 20px 20px;
+                transition: all 0.5s ease;
+                z-index: 1000;
+                box-shadow: 5px 0 15px rgba(0,0,0,0.3);
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+                width: 100%;
+            }
+            
+            .nav-links a {
+                display: block;
+                padding: 10px 0;
+                font-size: 1.2rem;
+                border-bottom: 1px solid rgba(255, 153, 0, 0.2);
+            }
+            
+            .menu-btn {
+                display: block;
+                color: white;
+                font-size: 1.5rem;
+                cursor: pointer;
+                z-index: 1001;
+                transition: transform 0.3s ease;
+            }
+            
+            .menu-btn:hover {
+                transform: scale(1.1);
+            }
+        }
+        
+        /* Enhanced Header Styling */
+        header {
+            background-color: var(--primary);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            min-height: 48px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s ease;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-links li {
+            margin-left: 18px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+            font-weight: 500;
+            position: relative;
+            padding: 3px 0;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #ff9900;
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .menu-btn {
+            display: none;
+        }
+        
+        /* Desktop Navigation */
+        @media (min-width: 769px) {
+            .menu-btn {
+                display: none;
+            }
+            
+            .nav-links {
+                display: flex !important;
+                position: static;
+                background: none;
+                width: auto;
+                height: auto;
+                flex-direction: row;
+                align-items: center;
+                padding: 0;
+                box-shadow: none;
+            }
+            
+            .logo-text {
+                display: flex !important;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
     <header>
         <div class="container">
             <nav>
-                <div class="logo"><i class="fab fa-aws"></i>Kanakaprasad<span>SD</span></div>
+                <div class="logo">
+                    <img src="assets/avatar.png" alt="Kanakaprasad SD" class="logo-avatar">
+                    <div class="logo-text">
+                        Kanakaprasad<span>SD</span>
+                    </div>
+                </div>
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
