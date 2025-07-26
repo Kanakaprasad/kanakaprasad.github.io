@@ -25,18 +25,18 @@
                     <h4>LinkedIn</h4>
                     <div class="card-text">kanakaprasad-sd</div>
                 </a>
+            </div>
+            
             <div class="contact-card">
                 <a href="https://github.com/kanakaprasad-sd" target="_blank" class="card-link">
                     <div class="card-icon github">
                         <i class="fab fa-github"></i>
                     </div>
                     <h4>GitHub</h4>
-                    <div class="card-text">kanakaprasad-sd</div>
-                </a>
-            </div>
+                    <div class="card-text">kanakaprasa
             
             <div class="contact-card">
-                <div class="card-content">
+                <div class="card-link">
                     <div class="card-icon location">
                         <i class="fas fa-map-marker-alt"></i>
                     </div>
@@ -51,28 +51,19 @@
             <div class="form-container">
                 <div class="form-header">
                     <h3>Send Message</h3>
-                    <p class="form-subtitle">Ready to start your cloud journey? Drop me a message.</p>
+                    <p class="form-subtitle">Ready to start your cloud journey?<br>Drop me a message.</p>
                 </div>
                 
                 <form id="contactForm" action="https://formspree.io/f/xdkdanwe" method="POST">
                     <input type="text" name="_gotcha" style="display:none">
                     
                     <div class="input-group">
-                        <div class="form-field">
-                            <input type="text" name="name" placeholder="Full Name" required>
-                        </div>
-                        <div class="form-field">
-                            <input type="email" name="email" placeholder="Email Address" required>
-                        </div>
+                        <input type="text" name="name" placeholder="Full Name" required>
+                        <input type="email" name="email" placeholder="Email Address" required>
                     </div>
                     
-                    <div class="form-field subject-field">
-                        <input type="text" name="subject" placeholder="Subject" required>
-                    </div>
-                    
-                    <div class="form-field message-field">
-                        <textarea name="message" placeholder="Your message..." required></textarea>
-                    </div>
+                    <input type="text" name="subject" placeholder="Subject" required>
+                    <textarea name="message" placeholder="Your message..." required></textarea>
                     
                     <button type="submit" class="submit-btn">
                         <span>Send Message</span>
@@ -134,13 +125,12 @@
     grid-template-columns: 1fr;
 }
 
-/* Fixed Contact Cards Grid - Ensuring Proper Layout */
+/* FIXED: Contact Cards Grid - Force 4 columns */
 .contact-cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     margin-bottom: 30px;
-    align-items: stretch;
 }
 
 .contact-card {
@@ -151,8 +141,6 @@
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
     min-height: 140px;
 }
 
@@ -178,8 +166,7 @@
     border-color: #ff9900;
 }
 
-/* Consistent card content styling */
-.card-link, .card-content {
+.card-link {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -189,7 +176,6 @@
     text-decoration: none;
     color: inherit;
     height: 100%;
-    flex-grow: 1;
     transition: all 0.3s ease;
 }
 
@@ -209,7 +195,6 @@
     font-size: 1.2rem;
     color: white;
     transition: all 0.3s ease;
-    flex-shrink: 0;
 }
 
 .card-icon.email {
@@ -238,7 +223,6 @@
     color: #232f3e;
     margin-bottom: 8px;
     font-family: 'Montserrat', sans-serif;
-    flex-shrink: 0;
 }
 
 .card-text {
@@ -253,13 +237,12 @@
     color: #ff9900;
 }
 
-/* Enhanced Form Section */
+/* FIXED: Form Section with Better Text */
 .contact-form-section {
     background: linear-gradient(135deg, #232f3e 0%, #1a252f 100%);
     border-radius: 20px;
     overflow: hidden;
     position: relative;
-    margin-top: 20px;
     box-shadow: 0 10px 40px rgba(35, 47, 62, 0.2);
 }
 
@@ -274,37 +257,31 @@
 }
 
 .form-container {
-    padding: 45px 40px;
+    padding: 40px;
     position: relative;
     z-index: 1;
 }
 
-/* Fixed Form Header with Clear Typography */
 .form-header {
     text-align: center;
-    margin-bottom: 40px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 35px;
 }
 
 .form-header h3 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: white;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
-    margin-bottom: 18px;
-    letter-spacing: 0.5px;
+    margin-bottom: 15px;
 }
 
+/* FIXED: Clear readable subtitle */
 .form-subtitle {
-    color: rgba(255,255,255,0.95);
-    font-size: 1.05rem;
+    color: white;
+    font-size: 1rem;
     line-height: 1.5;
     font-weight: 400;
-    margin: 0;
-    max-width: 320px;
-    margin: 0 auto;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    opacity: 0.9;
 }
 
 /* Form Styling */
@@ -316,56 +293,21 @@ form {
 .input-group {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    margin-bottom: 25px;
-}
-
-.form-field {
-    position: relative;
-}
-
-.subject-field {
-    margin-bottom: 30px;
-    position: relative;
-}
-
-.subject-field::after {
-    content: '';
-    position: absolute;
-    bottom: -15px;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255,153,0,0.3), transparent);
-}
-
-.message-field {
-    margin-bottom: 30px;
-    position: relative;
-}
-
-.message-field::before {
-    content: '';
-    position: absolute;
-    top: -15px;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255,153,0,0.3), transparent);
+    gap: 15px;
+    margin-bottom: 20px;
 }
 
 input, textarea {
     width: 100%;
-    padding: 16px 20px;
+    padding: 15px 18px;
     border: 2px solid rgba(255,255,255,0.1);
-    border-radius: 12px;
+    border-radius: 10px;
     background: rgba(255,255,255,0.05);
     color: white;
     font-size: 1rem;
     font-family: 'Open Sans', sans-serif;
     transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
-    box-sizing: border-box;
+    margin-bottom: 15px;
 }
 
 input::placeholder, textarea::placeholder {
@@ -376,22 +318,21 @@ input:focus, textarea:focus {
     outline: none;
     border-color: #ff9900;
     background: rgba(255,255,255,0.1);
-    box-shadow: 0 0 0 4px rgba(255,153,0,0.2);
-    transform: translateY(-2px);
+    box-shadow: 0 0 0 3px rgba(255,153,0,0.2);
 }
 
 textarea {
-    min-height: 130px;
+    min-height: 120px;
     resize: vertical;
-    line-height: 1.6;
+    margin-bottom: 20px;
 }
 
 .submit-btn {
     width: 100%;
-    padding: 18px 30px;
+    padding: 16px 30px;
     background: linear-gradient(135deg, #ff9900, #ffb84d);
     border: none;
-    border-radius: 12px;
+    border-radius: 10px;
     color: white;
     font-size: 1.1rem;
     font-weight: 600;
@@ -400,11 +341,10 @@ textarea {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 12px;
+    gap: 10px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     font-family: 'Montserrat', sans-serif;
-    margin-top: 10px;
 }
 
 .submit-btn:hover {
@@ -413,12 +353,7 @@ textarea {
     box-shadow: 0 8px 25px rgba(255,153,0,0.4);
 }
 
-.submit-btn:active {
-    transform: translateY(-1px);
-}
-
 .submit-btn i {
-    font-size: 1rem;
     transition: transform 0.3s ease;
 }
 
@@ -427,25 +362,10 @@ textarea {
 }
 
 /* Responsive Design */
-@media (min-width: 992px) {
-    .contact-cards {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 25px;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
+@media (max-width: 992px) {
     .contact-cards {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
-    }
-    
-    .contact-cards .contact-card:nth-child(3) {
-        order: 3;
-    }
-    
-    .contact-cards .contact-card:nth-child(4) {
-        order: 4;
     }
 }
 
@@ -454,114 +374,25 @@ textarea {
         font-size: 2rem;
     }
     
-    .contact-wrapper {
-        gap: 50px;
-    }
-    
-    .contact-cards {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 18px;
-        margin-bottom: 25px;
-    }
-    
-    .card-link, .card-content {
-        padding: 20px 15px;
-    }
-    
-    .contact-card {
-        min-height: 120px;
-    }
-    
-    .form-container {
-        padding: 35px 25px;
-    }
-    
-    .form-header {
-        margin-bottom: 30px;
-        padding-bottom: 15px;
-    }
-    
-    .form-header h3 {
-        font-size: 1.6rem;
-        margin-bottom: 15px;
-    }
-    
-    .form-subtitle {
-        font-size: 1rem;
-        max-width: none;
-        line-height: 1.4;
-    }
-    
-    .input-group {
-        grid-template-columns: 1fr;
-        gap: 18px;
-        margin-bottom: 22px;
-    }
-    
-    .subject-field {
-        margin-bottom: 25px;
-    }
-    
-    .message-field {
-        margin-bottom: 25px;
-    }
-    
-    input, textarea {
-        padding: 14px 16px;
-        font-size: 0.95rem;
-    }
-    
-    .submit-btn {
-        padding: 16px 25px;
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
     .contact-cards {
         grid-template-columns: 1fr;
         gap: 15px;
     }
     
     .form-container {
-        padding: 30px 20px;
+        padding: 30px 25px;
     }
     
-    .form-header h3 {
-        font-size: 1.4rem;
-    }
-    
-    .form-subtitle {
-        font-size: 0.95rem;
+    .input-group {
+        grid-template-columns: 1fr;
     }
     
     input, textarea {
-        padding: 12px 14px;
+        padding: 12px 15px;
     }
     
-    .submit-btn {
-        padding: 14px 20px;
-        font-size: 0.95rem;
+    .form-header h3 {
+        font-size: 1.5rem;
     }
-}
-
-/* Loading Animation */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.contact-cards {
-    animation: fadeInUp 0.6s ease-out;
-}
-
-.contact-form-section {
-    animation: fadeInUp 0.6s ease-out 0.2s both;
 }
 </style>
