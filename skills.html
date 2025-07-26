@@ -1,6 +1,7 @@
 <div class="container">
     <div class="section-title">
         <h2>Technical Skills</h2>
+        <p class="section-subtitle">Comprehensive expertise across cloud infrastructure, DevOps automation, and system administration</p>
     </div>
     <div class="skills-container">
         <div class="skill-card">
@@ -9,13 +10,15 @@
             </div>
             <h3>AWS Core Services</h3>
             <ul>
-                <li><i class="fas fa-check-circle"></i>EC2 & Elastic IP</li>
-                <li><i class="fas fa-check-circle"></i>Elastic Load Balancers</li>
-                <li><i class="fas fa-check-circle"></i>Route 53 Management</li>
-                <li><i class="fas fa-check-circle"></i>VPC Configuration</li>
-                <li><i class="fas fa-check-circle"></i>S3 & CloudFront</li>
+                <li><i class="fas fa-check-circle"></i>EC2 & Elastic IP Management</li>
+                <li><i class="fas fa-check-circle"></i>ELB & Auto Scaling</li>
+                <li><i class="fas fa-check-circle"></i>S3, EFS & Glacier Storage</li>
+                <li><i class="fas fa-check-circle"></i>VPC & Route 53 DNS</li>
+                <li><i class="fas fa-check-circle"></i>Lambda & SNS Services</li>
+                <li><i class="fas fa-check-circle"></i>CloudWatch & CloudFront</li>
             </ul>
         </div>
+        
         <div class="skill-card">
             <div class="skill-icon">
                 <i class="fas fa-shield-alt"></i>
@@ -23,37 +26,260 @@
             <h3>Security & Compliance</h3>
             <ul>
                 <li><i class="fas fa-check-circle"></i>AWS Security Hub</li>
-                <li><i class="fas fa-check-circle"></i>Web Application Firewall</li>
-                <li><i class="fas fa-check-circle"></i>ACM Certificate Management</li>
+                check-circle"></i>WAF & DDoS Protection</li>
                 <li><i class="fas fa-check-circle"></i>IAM Policy Management</li>
-                <li><i class="fas fa-check-circle"></i>Linux OS Patching</li>
+                <li><i class="fas fa-check-circle"></i>ACM Certificate Management</li>
+                <li><i class="fas fa-check-circle"></i>Security Best Practices</li>
+                <li><i class="fas fa-check-circle"></i>Compliance Monitoring</li>
             </ul>
         </div>
+        
         <div class="skill-card">
             <div class="skill-icon">
                 <i class="fas fa-sync-alt"></i>
             </div>
             <h3>DevOps & CI/CD</h3>
             <ul>
-                <li><i class="fas fa-check-circle"></i>CI/CD Pipeline Development</li>
-                <li><i class="fas fa-check-circle"></i>Git Integration</li>
+                <li><i class="fas fa-check-circle"></i>Git Version Control</li>
+                <li><i class="fas fa-check-circle"></i>Jenkins Pipeline Automation</li>
+                <li><i class="fas fa-check-circle"></i>AWS CodeDeploy</li>
                 <li><i class="fas fa-check-circle"></i>AWS Amplify Hosting</li>
+                <li><i class="fas fa-check-circle"></i>SonarQube Code Quality</li>
                 <li><i class="fas fa-check-circle"></i>Automated Deployments</li>
-                <li><i class="fas fa-check-circle"></i>Infrastructure as Code</li>
             </ul>
         </div>
+        
         <div class="skill-card">
             <div class="skill-icon">
-                <i class="fas fa-tools"></i>
+                <i class="fas fa-code"></i>
             </div>
-            <h3>Tools & Technologies</h3>
+            <h3>Infrastructure as Code & Automation</h3>
+            <ul>
+                <li><i class="fas fa-check-circle"></i>AWS CloudFormation</li>
+                <li><i class="fas fa-check-circle"></i>Terraform (Basic)</li>
+                <li><i class="fas fa-check-circle"></i>Ansible Configuration</li>
+                <li><i class="fas fa-check-circle"></i>Docker Containerization</li>
+                <li><i class="fas fa-check-circle"></i>Kubernetes Fundamentals</li>
+                <li><i class="fas fa-check-circle"></i>Infrastructure Automation</li>
+            </ul>
+        </div>
+        
+        <div class="skill-card">
+            <div class="skill-icon">
+                <i class="fas fa-chart-line"></i>
+            </div>
+            <h3>Monitoring & Performance</h3>
             <ul>
                 <li><i class="fas fa-check-circle"></i>New Relic Monitoring</li>
-                <li><i class="fas fa-check-circle"></i>WinSCP (SFTP/FTP)</li>
-                <li><i class="fas fa-check-circle"></i>Docker CLI & Containers</li>
-                <li><i class="fas fa-check-circle"></i>Kubernetes Fundamentals</li>
+                <li><i class="fas fa-check-circle"></i>AWS CloudWatch</li>
                 <li><i class="fas fa-check-circle"></i>Log Management</li>
+                <li><i class="fas fa-check-circle"></i>Performance Optimization</li>
+                <li><i class="fas fa-check-circle"></i>System Health Monitoring</li>
+                <li><i class="fas fa-check-circle"></i>Alerting & Incident Response</li>
+            </ul>
+        </div>
+        
+        <div class="skill-card">
+            <div class="skill-icon">
+                <i class="fas fa-terminal"></i>
+            </div>
+            <h3>System Administration & Scripting</h3>
+            <ul>
+                <li><i class="fas fa-check-circle"></i>Linux (RHEL, Ubuntu, Amazon Linux)</li>
+                <li><i class="fas fa-check-circle"></i>Windows Server Administration</li>
+                <li><i class="fas fa-check-circle"></i>Shell Scripting (Bash)</li>
+                <li><i class="fas fa-check-circle"></i>Python Automation</li>
+                <li><i class="fas fa-check-circle"></i>WinSCP (SFTP/FTP)</li>
+                <li><i class="fas fa-check-circle"></i>Apache, Nginx, Tomcat</li>
             </ul>
         </div>
     </div>
 </div>
+
+<style>
+/* Enhanced Skills Section Styling */
+.section-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    margin-top: -40px;
+    margin-bottom: 50px;
+    font-style: italic;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.skill-card {
+    background: white;
+    padding: 30px 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    text-align: center;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 153, 0, 0.1);
+    min-height: 320px;
+}
+
+.skill-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    border-color: #ff9900;
+}
+
+.skill-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(45deg, #ff9900, #ffb84d);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.skill-card:hover::before {
+    transform: scaleX(1);
+}
+
+.skill-icon {
+    font-size: 3.2rem;
+    color: #ff9900;
+    margin-bottom: 25px;
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.skill-card:hover .skill-icon {
+    transform: scale(1.15) rotate(5deg);
+    color: #232f3e;
+}
+
+.skill-card h3 {
+    margin-bottom: 25px;
+    color: #232f3e;
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.skill-card ul {
+    list-style: none;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+
+.skill-card ul li {
+    padding: 10px 0;
+    border-bottom: 1px dashed #eee;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #555;
+    display: flex;
+    align-items: center;
+    line-height: 1.4;
+}
+
+.skill-card ul li:hover {
+    padding-left: 8px;
+    color: #232f3e;
+    background: rgba(255, 153, 0, 0.05);
+    border-radius: 5px;
+    border-color: #ff9900;
+}
+
+.skill-card ul li:last-child {
+    border-bottom: none;
+}
+
+.skill-card ul li i {
+    color: #ff9900;
+    margin-right: 12px;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.skill-card ul li:hover i {
+    transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .skills-container {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+    }
+    
+    .skill-card {
+        padding: 25px 20px;
+        min-height: 300px;
+    }
+    
+    .skill-icon {
+        font-size: 2.8rem;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-subtitle {
+        font-size: 1rem;
+        margin-bottom: 35px;
+    }
+    
+    .skills-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .skill-card {
+        padding: 25px 20px;
+        min-height: auto;
+    }
+    
+    .skill-card h3 {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+    }
+    
+    .skill-card ul li {
+        font-size: 0.9rem;
+        padding: 8px 0;
+    }
+}
+
+/* Enhanced Animation Effects */
+@keyframes skillCardLoad {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.skill-card {
+    animation: skillCardLoad 0.6s ease-out forwards;
+}
+
+.skill-card:nth-child(1) { animation-delay: 0.1s; }
+.skill-card:nth-child(2) { animation-delay: 0.2s; }
+.skill-card:nth-child(3) { animation-delay: 0.3s; }
+.skill-card:nth-child(4) { animation-delay: 0.4s; }
+.skill-card:nth-child(5) { animation-delay: 0.5s; }
+.skill-card:nth-child(6) { animation-delay: 0.6s; }
+</style>
