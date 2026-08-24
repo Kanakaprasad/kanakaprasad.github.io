@@ -2,308 +2,143 @@
     <div class="section-title">
         <h2>Recent Projects</h2>
     </div>
-    <div class="projects-container">
-        <div class="project-card">
-            <div class="project-img">
-                <img src="assets/project-ci-pipeline.jpg" alt="CI/CD Pipeline">
-            </div>
-            <div class="project-content">
-                <h3>Automated CI/CD Pipeline</h3>
-                <p>Designed and implemented a secure CI/CD pipeline using AWS services and Git integration, enabling seamless deployments and reducing deployment time by 60%.</p>
-                <div class="tech-stack">
-                    <span class="tech">AWS CodePipeline</span>
-                    <span class="tech">Git</span>
-                    <span class="tech">AWS Amplify</span>
-                    <span class="tech">EC2</span>
-                </div>
-            </div>
-        </div>
+    <div class="projects-grid">
         
-        <div class="project-card">
-            <div class="project-img">
-                <img src="assets/project-security.jpg" alt="Security Infrastructure">
+        <!-- Project 1 -->
+        <div class="project-card animate-hidden">
+            <div class="project-visual project-visual-infra">
+                <i class="fas fa-server"></i>
+                <i class="fas fa-cloud"></i>
+                <i class="fas fa-database"></i>
             </div>
             <div class="project-content">
-                <h3>Cloud Security Enhancement</h3>
-                <p>Implemented comprehensive security measures using AWS Security Hub, WAF, and IAM policies to protect infrastructure, reducing security incidents by 90%.</p>
-                <div class="tech-stack">
-                    <span class="tech">AWS Security Hub</span><span class="tech">IAM</span>
-                    <span class="tech">ACM</span>
+                <div class="project-category">Professional Work</div>
+                <h3 class="project-title">Cloud Infrastructure & Application Hosting</h3>
+                <p class="project-desc">Managed and supported production web applications and resilient cloud infrastructure environments.</p>
+                
+                <div class="project-work">
+                    <h4>What I worked on</h4>
+                    <ul>
+                        <li>Provisioned and managed Amazon EC2 instances within secured VPC environments.</li>
+                        <li>Configured IAM roles, Security Groups, and Route 53 for access and domain management.</li>
+                        <li>Supported LAMP stack applications with Amazon RDS and S3 integration.</li>
+                        <li>Troubleshot infrastructure and application deployment issues to ensure high availability.</li>
+                    </ul>
+                </div>
+                
+                <div class="tech-stack-inline">
+                    <span class="tech-badge">Amazon EC2</span>
+                    <span class="tech-badge">VPC</span>
+                    <span class="tech-badge">IAM</span>
+                    <span class="tech-badge">Amazon RDS</span>
+                    <span class="tech-badge">Amazon S3</span>
+                    <span class="tech-badge">Route 53</span>
                 </div>
             </div>
         </div>
-        
-        <div class="project-card">
-            <div class="project-img">
-                <img src="assets/project-ha.jpg" alt="High Availability Setup">
+
+        <!-- Project 2 -->
+        <div class="project-card animate-hidden delay-100">
+            <div class="project-visual project-visual-cicd">
+                <i class="fas fa-code-branch"></i>
+                <i class="fas fa-cogs"></i>
+                <i class="fas fa-box-open"></i>
             </div>
             <div class="project-content">
-                <h3>High Availability Architecture</h3>
-                <p>Designed and deployed a highly available infrastructure using ELB, Route 53, and multiple availability zones, achieving 99.99% uptime for critical applications.</p>
-                <div class="tech-stack">
-                    <span class="tech">ELB</span>
-                    <span class="tech">Route 53</span>
-                    <span class="tech">CloudFront</span>
-                    <span class="tech">EC2</span>
+                <div class="project-category">Professional Work</div>
+                <h3 class="project-title">CI/CD Automation & Application Deployment</h3>
+                <p class="project-desc">Improved deployment consistency and reduced manual effort by automating build and deployment workflows.</p>
+                
+                <div class="project-work">
+                    <h4>What I worked on</h4>
+                    <ul>
+                        <li>Automated application deployments across production and staging environments on Linux servers.</li>
+                        <li>Built and maintained workflows using Jenkins, AWS CodePipeline, Git, and GitHub.</li>
+                        <li>Utilized Docker for consistent application packaging.</li>
+                        <li>Managed deployment troubleshooting, monitoring, and rollbacks to minimize downtime.</li>
+                    </ul>
+                </div>
+                
+                <div class="tech-stack-inline">
+                    <span class="tech-badge">Jenkins</span>
+                    <span class="tech-badge">AWS CodePipeline</span>
+                    <span class="tech-badge">Git</span>
+                    <span class="tech-badge">GitHub</span>
+                    <span class="tech-badge">Docker</span>
+                    <span class="tech-badge">Linux</span>
                 </div>
             </div>
         </div>
-        
-        <div class="project-card">
-            <div class="project-img">
-                <img src="assets/project-monitoring.jpg" alt="Cloud Monitoring System">
+
+        <!-- Project 3 -->
+        <div class="project-card animate-hidden">
+            <div class="project-visual project-visual-opt">
+                <i class="fas fa-tachometer-alt"></i>
+                <i class="fas fa-network-wired"></i>
+                <i class="fas fa-dollar-sign"></i>
             </div>
             <div class="project-content">
-                <h3>Cloud Monitoring & Alerting System</h3>
-                <p>Implemented comprehensive infrastructure monitoring using New Relic and AWS CloudWatch, creating automated alerting workflows that reduced system downtime by 85% and improved incident response time.</p>
-                <div class="tech-stack">
-                    <span class="tech">New Relic</span>
-                    <span class="tech">AWS CloudWatch</span>
-                    <span class="tech">SNS</span>
-                    <span class="tech">Lambda</span>
-                    <span class="tech">CloudFormation</span>
+                <div class="project-category">Professional Work</div>
+                <h3 class="project-title">CloudFront Performance & AWS Cost Optimization</h3>
+                <p class="project-desc">Optimized static content delivery, monitored infrastructure usage, and right-sized AWS resources.</p>
+                
+                <div class="project-work">
+                    <h4>What I worked on</h4>
+                    <ul>
+                        <li>Configured Amazon CloudFront, Route 53, and ACM for secure, optimized static content delivery.</li>
+                        <li>Right-sized EC2 instances and optimized Amazon EBS and S3 storage allocations.</li>
+                        <li>Monitored infrastructure usage to identify and eliminate wasteful resource consumption.</li>
+                    </ul>
+                </div>
+
+                <div class="project-impact">
+                    <div class="impact-pill"><i class="fas fa-bolt"></i> Hit ratio 20% &rarr; 95%</div>
+                    <div class="impact-pill"><i class="fas fa-chart-line"></i> 50%+ Infra Cost Reduction</div>
+                    <div class="impact-pill"><i class="fas fa-database"></i> 30%+ EBS/S3 Savings</div>
+                </div>
+                
+                <div class="tech-stack-inline">
+                    <span class="tech-badge">Amazon CloudFront</span>
+                    <span class="tech-badge">Route 53</span>
+                    <span class="tech-badge">ACM</span>
+                    <span class="tech-badge">Amazon S3</span>
+                    <span class="tech-badge">Amazon EC2</span>
+                    <span class="tech-badge">Amazon EBS</span>
                 </div>
             </div>
         </div>
+
+        <!-- Project 4 -->
+        <div class="project-card animate-hidden delay-100">
+            <div class="project-visual project-visual-k8s">
+                <i class="fas fa-dharmachakra"></i>
+                <i class="fab fa-docker"></i>
+                <i class="fas fa-cubes"></i>
+            </div>
+            <div class="project-content">
+                <div class="project-category">DevOps Project</div>
+                <h3 class="project-title">Kubernetes Application Deployment Lab</h3>
+                <p class="project-desc">A hands-on practical environment designed to build production-oriented Kubernetes understanding.</p>
+                
+                <div class="project-work">
+                    <h4>What I worked on</h4>
+                    <ul>
+                        <li>Containerized a Python application and published the Docker image to a registry.</li>
+                        <li>Configured a local Minikube cluster and utilized kubectl for cluster interaction.</li>
+                        <li>Managed Deployments, ReplicaSets, and Services with appropriate labels and selectors.</li>
+                        <li>Practiced rolling updates, rollbacks, self-healing, and troubleshooting issues like ImagePullBackOff.</li>
+                    </ul>
+                </div>
+                
+                <div class="tech-stack-inline">
+                    <span class="tech-badge">Kubernetes</span>
+                    <span class="tech-badge">Minikube</span>
+                    <span class="tech-badge">kubectl</span>
+                    <span class="tech-badge">Docker</span>
+                    <span class="tech-badge">Python</span>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
-
-<style>
-/* Enhanced Projects Section Styling */
-.projects-container {
-    display: grid;
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
-
-/* Desktop: 2 columns for better spacing with 4 projects */
-@media (min-width: 1024px) {
-    .projects-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 35px;
-    }
-}
-
-/* Tablet: 2 columns */
-@media (min-width: 768px) and (max-width: 1023px) {
-    .projects-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 25px;
-    }
-}
-
-/* Mobile: 1 column */
-@media (max-width: 767px) {
-    .projects-container {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        padding: 0 10px;
-    }
-}
-
-.project-card {
-    background: white;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-    transition: all 0.4s ease;
-    position: relative;
-    border: 1px solid rgba(255, 153, 0, 0.1);
-    min-height: 400px;
-    display: flex;
-    flex-direction: column;
-}
-
-.project-card:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-    border-color: #ff9900;
-}
-
-.project-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background: linear-gradient(90deg, #ff9900, #ffb84d);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.4s ease;
-    z-index: 1;
-}
-
-.project-card:hover::before {
-    transform: scaleX(1);
-}
-
-.project-img {
-    height: 220px;
-    overflow: hidden;
-    background: linear-gradient(45deg, #232f3e, #131a22);
-    position: relative;
-}
-
-.project-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: all 0.5s ease;
-    opacity: 0.9;
-}
-
-.project-card:hover .project-img img {
-    transform: scale(1.1);
-    opacity: 1;
-}
-
-.project-content {
-    padding: 25px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.project-content h3 {
-    margin-bottom: 15px;
-    color: #232f3e;
-    font-size: 1.4rem;
-    font-weight: 600;
-    line-height: 1.3;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.project-content p {
-    margin-bottom: 20px;
-    color: #555;
-    line-height: 1.6;
-    font-size: 1rem;
-    flex-grow: 1;
-}
-
-.tech-stack {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: auto;
-}
-
-.tech {
-    background: linear-gradient(45deg, #e6f7ff, #f0f9ff);
-    color: #0066cc;
-    padding: 6px 15px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(0, 102, 204, 0.2);
-}
-
-.tech:hover {
-    background: linear-gradient(45deg, #0066cc, #0052a3);
-    color: white;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 102, 204, 0.3);
-}
-
-/* Enhanced Mobile Styles */
-@media (max-width: 767px) {
-    .project-card {
-        min-height: 350px;
-        margin: 0 5px;
-    }
-    
-    .project-img {
-        height: 180px;
-    }
-    
-    .project-content {
-        padding: 20px;
-    }
-    
-    .project-content h3 {
-        font-size: 1.2rem;
-        margin-bottom: 12px;
-    }
-    
-    .project-content p {
-        font-size: 0.9rem;
-        margin-bottom: 15px;
-    }
-    
-    .tech {
-        font-size: 0.8rem;
-        padding: 5px 12px;
-    }
-}
-
-/* Very small mobile devices */
-@media (max-width: 480px) {
-    .project-card {
-        min-height: 320px;
-        margin: 0;
-    }
-    
-    .project-img {
-        height: 160px;
-    }
-    
-    .project-content {
-        padding: 18px;
-    }
-    
-    .project-content h3 {
-        font-size: 1.1rem;
-    }
-    
-    .project-content p {
-        font-size: 0.85rem;
-    }
-}
-
-/* Loading Animation */
-@keyframes projectCardFadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.project-card {
-    animation: projectCardFadeIn 0.6s ease-out forwards;
-    opacity: 0;
-}
-
-.project-card:nth-child(1) { animation-delay: 0.1s; }
-.project-card:nth-child(2) { animation-delay: 0.2s; }
-.project-card:nth-child(3) { animation-delay: 0.3s; }
-.project-card:nth-child(4) { animation-delay: 0.4s; }
-
-/* Improved hover states for mobile */
-@media (hover: none) and (pointer: coarse) {
-    .project-card:hover {
-        transform: none;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-    }
-    
-    .project-card:hover .project-img img {
-        transform: none;
-        opacity: 0.9;
-    }
-    
-    .tech:hover {
-        background: linear-gradient(45deg, #e6f7ff, #f0f9ff);
-        color: #0066cc;
-        transform: none;
-        box-shadow: none;
-    }
-}
-</style>

@@ -2,7 +2,7 @@
 
 ![Portfolio Screenshot](./assets/portfolio-screenshot.png)
 
-**Live Site:** https://www.kpworks.site/
+**Live Site:** https://www.kpwork.site/
 
 ## Table of Contents
 - [About](#about)
