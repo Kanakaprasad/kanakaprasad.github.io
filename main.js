@@ -65,8 +65,12 @@ function initIntersectionObserver() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('animate-visible');
-                // Optional: Unobserve after animating once
-                // observer.unobserve(entry.target); 
+                
+                // Trigger count up if applicable
+                if (entry.target.classList.contains('count-up-trigger') && !entry.target.classList.contains('counted')) {
+                    startCountUp(entry.target);
+                    entry.target.classList.add('counted');
+                }
             }
         });
     }, options);
@@ -75,7 +79,7 @@ function initIntersectionObserver() {
 }
 
 function observeElements() {
-    const hiddenElements = document.querySelectorAll('.animate-hidden');
+    const hiddenElements = document.querySelectorAll('.animate-hidden, .count-up-trigger');
     hiddenElements.forEach(el => observer.observe(el));
 }
 
@@ -84,6 +88,43 @@ function refreshIntersectionObserver() {
         observer.disconnect();
         observeElements();
     }
+}
+
+/**
+ * Number counting animation for statistics
+ */
+function startCountUp(container) {
+    const counters = container.querySelectorAll('.stat-value-count');
+    counters.forEach(counter => {
+        const target = parseFloat(counter.getAttribute('data-target'));
+        const isFloat = counter.getAttribute('data-target').includes('.');
+        const duration = 2000; // 2 seconds
+        const startTime = performance.now();
+
+        function updateCount(currentTime) {
+            const elapsedTime = currentTime - startTime;
+            const progress = Math.min(elapsedTime / duration, 1);
+            
+            // easeOutQuart
+            const easeProgress = 1 - Math.pow(1 - progress, 4);
+            
+            const currentVal = target * easeProgress;
+            
+            if (isFloat) {
+                counter.innerText = currentVal.toFixed(1);
+            } else {
+                counter.innerText = Math.floor(currentVal);
+            }
+
+            if (progress < 1) {
+                requestAnimationFrame(updateCount);
+            } else {
+                counter.innerText = target + (isFloat && target % 1 === 0 ? '.0' : '');
+            }
+        }
+        
+        requestAnimationFrame(updateCount);
+    });
 }
 
 /**
@@ -152,26 +193,47 @@ function initSmoothScrolling() {
 }
 
 /**
- * Scroll to Top Button & Header Scroll state
+ * Scroll to Top Button & Header Scroll state & Scroll Spy
  */
 function initScrollToTop() {
     const scrollTopBtn = document.getElementById('scrollTopBtn');
     const header = document.getElementById('header');
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-links a');
     
     window.addEventListener('scroll', () => {
+        let currentScroll = window.scrollY;
+
         // Header background styling on scroll
-        if (window.scrollY > 50) {
+        if (currentScroll > 50) {
             header?.style.setProperty('box-shadow', '0 4px 6px -1px rgba(0, 0, 0, 0.1)');
         } else {
             header?.style.setProperty('box-shadow', 'none');
         }
 
         // Scroll to top button visibility
-        if (window.scrollY > 500) {
+        if (currentScroll > 500) {
             scrollTopBtn?.classList.add('active');
         } else {
             scrollTopBtn?.classList.remove('active');
         }
+
+        // Active Navigation Scroll Spy
+        let currentSection = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (currentScroll >= (sectionTop - 150)) {
+                currentSection = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active-nav');
+            if (link.getAttribute('href').includes(currentSection)) {
+                link.classList.add('active-nav');
+            }
+        });
     });
 
     scrollTopBtn?.addEventListener('click', () => {
