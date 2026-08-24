@@ -715,23 +715,27 @@ footer {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    padding-top: 20px;
+    padding-top: 16px;
     border-top: 1px solid var(--border-light);
 }
 
 .tech-badge {
-    padding: 4px 10px;
-    background-color: var(--bg-main);
+    padding: 6px 12px;
+    background-color: var(--bg-surface-elevated);
     border: 1px solid var(--border-light);
-    border-radius: 4px;
-    font-size: 0.8rem;
-    color: var(--text-muted);
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent-primary);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
     transition: all 0.2s ease;
 }
 
 .tech-badge:hover {
-    color: var(--text-primary);
-    border-color: var(--border-hover);
+    background-color: var(--accent-primary);
+    color: white;
+    border-color: var(--accent-primary);
 }
 
 /* ===================== SKILLS SECTION ===================== */
@@ -1213,4 +1217,177 @@ footer {
     border-radius: 0 8px 8px 0;
     margin: 24px 0;
     color: var(--text-primary);
+}
+
+/* ===================== HERO INFRASTRUCTURE VISUALIZATION ===================== */
+.hero-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+@media (min-width: 992px) {
+    .hero-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.hero-visual {
+    display: none; /* Hide on mobile to keep layout clean */
+}
+
+@media (min-width: 992px) {
+    .hero-visual {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        perspective: 1000px;
+    }
+}
+
+.infra-diagram {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: rotateX(15deg) rotateY(-15deg);
+    background: rgba(11, 17, 33, 0.4);
+    padding: 40px;
+    border-radius: 16px;
+    border: 1px solid rgba(59, 130, 246, 0.15);
+    box-shadow: inset 0 0 20px rgba(59, 130, 246, 0.05), 0 20px 40px rgba(0,0,0,0.3);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.infra-diagram:hover {
+    transform: rotateX(5deg) rotateY(-5deg);
+    box-shadow: inset 0 0 30px rgba(59, 130, 246, 0.1), 0 30px 60px rgba(0,0,0,0.4);
+}
+
+.infra-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.infra-node {
+    width: 75px;
+    height: 75px;
+    background: var(--bg-surface-elevated);
+    border: 1px solid var(--accent-primary);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-primary);
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.15);
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.infra-node:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+    background: var(--accent-primary);
+    color: white;
+}
+
+.infra-node i {
+    font-size: 1.6rem;
+    margin-bottom: 6px;
+}
+
+.infra-node span {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.infra-node.secondary {
+    border-color: var(--accent-secondary);
+    color: var(--accent-secondary);
+}
+
+.infra-node.secondary:hover {
+    background: var(--accent-secondary);
+    color: white;
+    box-shadow: 0 8px 25px rgba(6, 182, 212, 0.3);
+}
+
+.infra-line {
+    width: 50px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.infra-line.vertical {
+    width: 2px;
+    height: 50px;
+    background: linear-gradient(180deg, var(--accent-primary), var(--accent-primary));
+}
+
+.infra-line.horizontal-dashed {
+    background: transparent;
+    border-top: 2px dashed var(--accent-secondary);
+    opacity: 0.4;
+}
+
+/* Data Flow Animation */
+.infra-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 12px;
+    height: 100%;
+    background: white;
+    box-shadow: 0 0 10px white, 0 0 20px var(--accent-secondary);
+    animation: dataFlow 2.5s infinite linear;
+}
+
+.infra-line.vertical::after {
+    width: 100%;
+    height: 12px;
+    animation: dataFlowVert 2.5s infinite linear;
+}
+
+.infra-line.horizontal-dashed::after {
+    display: none;
+}
+
+@keyframes dataFlow {
+    0% { transform: translateX(-15px); opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { transform: translateX(55px); opacity: 0; }
+}
+
+@keyframes dataFlowVert {
+    0% { transform: translateY(-15px); opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { transform: translateY(55px); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .infra-line::after {
+        animation: none;
+        display: none;
+    }
+    .infra-node:hover {
+        transform: none;
+    }
+    .infra-diagram {
+        transform: none;
+    }
+    .infra-diagram:hover {
+        transform: none;
+    }
 }
