@@ -59,59 +59,65 @@
             </div>
             
             <div class="hero-visual animate-hidden delay-300">
-                <div class="architecture-map">
-                    <!-- SVG Connection Lines -->
-                    <svg class="arch-connections" viewBox="0 0 400 400">
-                        <!-- DNS to CDN -->
-                        <path class="conn-line" d="M 115,60 L 145,60" />
-                        <path class="conn-particle" d="M 115,60 L 145,60" />
-                        
-                        <!-- CDN to LB -->
-                        <path class="conn-line" d="M 200,90 L 200,170" />
-                        <path class="conn-particle" d="M 200,90 L 200,170" />
-                        
-                        <!-- LB to APP -->
-                        <path class="conn-line" d="M 200,230 L 200,310" />
-                        <path class="conn-particle" d="M 200,230 L 200,310" />
-                        
-                        <!-- APP to DB -->
-                        <path class="conn-line" d="M 255,340 L 285,340" />
-                        <path class="conn-particle" d="M 255,340 L 285,340" />
+                <div class="architecture-map ecosystem-layout">
+                    <!-- Terraform Layer -->
+                    <div class="eco-layer terraform-layer animate-hidden fade-up stagger-1">
+                        <div class="eco-node terraform-node">
+                            <i class="fas fa-code"></i><span>Terraform (IaC)</span>
+                            <div class="eco-sub-label">Import & Manage Existing Infra</div>
+                        </div>
+                    </div>
+                    
+                    <div class="eco-core-layers">
+                        <!-- CI/CD Column -->
+                        <div class="eco-column cicd-column animate-hidden fade-up stagger-2">
+                            <div class="eco-group-label">CI/CD Automation</div>
+                            <div class="eco-node"><i class="fab fa-github"></i><span>GitHub</span></div>
+                            <i class="fas fa-arrow-down eco-arrow"></i>
+                            <div class="eco-node"><i class="fab fa-jenkins"></i><span>Jenkins</span></div>
+                            <i class="fas fa-arrow-down eco-arrow"></i>
+                            <div class="eco-node"><i class="fab fa-docker"></i><span>Docker Build</span></div>
+                            <i class="fas fa-arrow-down eco-arrow"></i>
+                            <div class="eco-node"><i class="fab fa-aws"></i><span>Amazon ECR</span></div>
+                        </div>
 
-                        <!-- CI/CD to APP -->
-                        <path class="conn-line conn-dashed" d="M 60,290 C 60,340 100,340 145,340" />
-                        <path class="conn-particle" d="M 60,290 C 60,340 100,340 145,340" />
-                        
-                        <!-- Monitor to LB -->
-                        <path class="conn-line conn-dashed" d="M 285,200 L 255,200" />
-                        
-                        <!-- Monitor to APP -->
-                        <path class="conn-line conn-dashed" d="M 340,230 C 340,310 300,340 255,340" />
-                    </svg>
+                        <!-- Compute & Orchestration Column -->
+                        <div class="eco-column compute-column animate-hidden fade-up stagger-3">
+                            <div class="eco-group-label">Deployment & Compute</div>
+                            <div class="eco-cluster">
+                                <div class="eco-row">
+                                    <div class="eco-node highlight-node"><i class="fas fa-dharmachakra"></i><span>Amazon EKS</span></div>
+                                    <div class="eco-node highlight-node"><i class="fab fa-aws"></i><span>Amazon ECS</span></div>
+                                </div>
+                                <div class="eco-scaling-group">
+                                    <div class="eco-group-label-small">Kubernetes Scaling</div>
+                                    <div class="eco-node small-node"><i class="fas fa-arrows-alt-h"></i><span>HPA (Workloads)</span></div>
+                                    <div class="eco-node small-node"><i class="fas fa-server"></i><span>Cluster Autoscaler (Nodes)</span></div>
+                                </div>
+                            </div>
+                        </div>
 
-                    <!-- Nodes -->
-                    <div class="arch-node node-dns" style="top: 30px; left: 5px;">
-                        <i class="fas fa-globe"></i><span>User/DNS</span>
-                    </div>
-                    <div class="arch-node node-cdn" style="top: 30px; left: 145px;">
-                        <i class="fas fa-network-wired"></i><span>CloudFront</span>
-                    </div>
-                    <div class="arch-node node-lb" style="top: 170px; left: 145px;">
-                        <i class="fas fa-sitemap"></i><span>ALB</span>
-                    </div>
-                    <div class="arch-node node-app" style="top: 310px; left: 145px;">
-                        <i class="fab fa-aws"></i><span>ECS/App</span>
-                    </div>
-                    <div class="arch-node node-db" style="top: 310px; left: 285px;">
-                        <i class="fas fa-database"></i><span>RDS</span>
+                        <!-- AWS Infrastructure Column -->
+                        <div class="eco-column infra-column animate-hidden fade-up stagger-4">
+                            <div class="eco-group-label">AWS Infrastructure</div>
+                            <div class="eco-node"><i class="fas fa-globe"></i><span>Route 53</span></div>
+                            <i class="fas fa-arrow-down eco-arrow"></i>
+                            <div class="eco-node"><i class="fas fa-network-wired"></i><span>CloudFront</span></div>
+                            <i class="fas fa-arrow-down eco-arrow"></i>
+                            <div class="eco-node"><i class="fas fa-sitemap"></i><span>ALB & VPC</span></div>
+                            <div class="eco-row" style="margin-top: 10px;">
+                                <div class="eco-node"><i class="fas fa-server"></i><span>EC2</span></div>
+                                <div class="eco-node"><i class="fas fa-database"></i><span>RDS & S3</span></div>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Secondary Nodes -->
-                    <div class="arch-node secondary node-cicd" style="top: 230px; left: 5px;">
-                        <i class="fas fa-code-branch"></i><span>CI/CD</span>
-                    </div>
-                    <div class="arch-node secondary node-monitor" style="top: 170px; left: 285px;">
-                        <i class="fas fa-chart-bar"></i><span>Monitor</span>
+                    <!-- Observability Layer -->
+                    <div class="eco-layer observability-layer animate-hidden fade-up stagger-5">
+                        <div class="eco-node obs-node">
+                            <i class="fas fa-chart-line"></i><span>CloudWatch & New Relic</span>
+                            <div class="eco-sub-label">Observability & Production Support</div>
+                        </div>
                     </div>
                 </div>
             </div>

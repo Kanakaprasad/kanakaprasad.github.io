@@ -4,7 +4,7 @@
     </div>
     <div class="projects-grid">
         
-        <!-- Project 1 -->
+        <!-- Project 1: AWS Infrastructure -->
         <div class="project-card animate-hidden fade-up stagger-1">
             <div class="project-visual project-visual-infra">
                 <i class="fas fa-server"></i>
@@ -13,129 +13,124 @@
             </div>
             <div class="project-content">
                 <div class="project-category">Professional Work</div>
-                <h3 class="project-title">Cloud Infrastructure & Application Hosting</h3>
-                <p class="project-desc">Managed and supported production web applications and resilient cloud infrastructure environments.</p>
+                <h3 class="project-title">AWS Infrastructure & Application Hosting</h3>
+                <p class="project-desc">Architected and supported resilient cloud environments, networking, and security configurations.</p>
                 
                 <div class="project-work">
                     <h4>What I worked on</h4>
                     <ul>
                         <li>Provisioned and managed Amazon EC2 instances within secured VPC environments.</li>
-                        <li>Configured IAM roles, Security Groups, and Route 53 for access and domain management.</li>
-                        <li>Supported LAMP stack applications with Amazon RDS and S3 integration.</li>
-                        <li>Troubleshot infrastructure and application deployment issues to ensure high availability.</li>
+                        <li>Configured ALB, Route 53, CloudFront, ACM, and WAF for secure traffic management.</li>
+                        <li>Supported production applications with Amazon RDS and S3 integration.</li>
+                        <li>Performed ongoing Linux administration, monitoring (CloudWatch/New Relic), and production support.</li>
                     </ul>
                 </div>
                 
                 <div class="tech-stack-inline">
                     <span class="tech-badge">Amazon EC2</span>
                     <span class="tech-badge">VPC</span>
-                    <span class="tech-badge">IAM</span>
-                    <span class="tech-badge">Amazon RDS</span>
-                    <span class="tech-badge">Amazon S3</span>
+                    <span class="tech-badge">ALB</span>
                     <span class="tech-badge">Route 53</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Project 2 -->
-        <div class="project-card animate-hidden fade-up stagger-2">
-            <div class="project-visual project-visual-cicd">
-                <i class="fas fa-code-branch"></i>
-                <i class="fas fa-cogs"></i>
-                <i class="fas fa-box-open"></i>
-            </div>
-            <div class="project-content">
-                <div class="project-category">Professional Work</div>
-                <h3 class="project-title">CI/CD Automation & Application Deployment</h3>
-                <p class="project-desc">Improved deployment consistency and reduced manual effort by automating build and deployment workflows.</p>
-                
-                <div class="project-work">
-                    <h4>What I worked on</h4>
-                    <ul>
-                        <li>Automated application deployments across production and staging environments on Linux servers.</li>
-                        <li>Built and maintained workflows using Jenkins, AWS CodePipeline, Git, and GitHub.</li>
-                        <li>Utilized Docker for consistent application packaging.</li>
-                        <li>Managed deployment troubleshooting, monitoring, and rollbacks to minimize downtime.</li>
-                    </ul>
-                </div>
-                
-                <div class="tech-stack-inline">
-                    <span class="tech-badge">Jenkins</span>
-                    <span class="tech-badge">AWS CodePipeline</span>
-                    <span class="tech-badge">Git</span>
-                    <span class="tech-badge">GitHub</span>
-                    <span class="tech-badge">Docker</span>
+                    <span class="tech-badge">CloudFront</span>
+                    <span class="tech-badge">Amazon RDS</span>
                     <span class="tech-badge">Linux</span>
                 </div>
             </div>
         </div>
 
-        <!-- Project 3 -->
-        <div class="project-card animate-hidden fade-up stagger-3">
-            <div class="project-visual project-visual-opt">
-                <i class="fas fa-tachometer-alt"></i>
-                <i class="fas fa-network-wired"></i>
-                <i class="fas fa-dollar-sign"></i>
+        <!-- Project 2: Terraform IaC -->
+        <div class="project-card animate-hidden fade-up stagger-2">
+            <div class="project-visual project-visual-cicd" style="background: linear-gradient(135deg, #4c1d95, #0f172a);">
+                <i class="fas fa-code"></i>
+                <i class="fas fa-layer-group"></i>
+                <i class="fas fa-check-circle"></i>
             </div>
             <div class="project-content">
                 <div class="project-category">Professional Work</div>
-                <h3 class="project-title">CloudFront Performance & AWS Cost Optimization</h3>
-                <p class="project-desc">Optimized static content delivery, monitored infrastructure usage, and right-sized AWS resources.</p>
+                <h3 class="project-title">Terraform Infrastructure as Code Initiative</h3>
+                <p class="project-desc">Introduced Terraform to gradually bring existing AWS infrastructure under code management.</p>
                 
                 <div class="project-work">
                     <h4>What I worked on</h4>
                     <ul>
-                        <li>Configured Amazon CloudFront, Route 53, and ACM for secure, optimized static content delivery.</li>
-                        <li>Right-sized EC2 instances and optimized Amazon EBS and S3 storage allocations.</li>
-                        <li>Monitored infrastructure usage to identify and eliminate wasteful resource consumption.</li>
+                        <li>Introduced Terraform to manage existing, manually provisioned AWS infrastructure.</li>
+                        <li>Imported existing EC2, VPC, and related AWS resources into Terraform state.</li>
+                        <li>Created accurate Terraform configurations to represent the live infrastructure.</li>
+                        <li>Utilized <code>terraform plan</code> to rigorously validate code and safely deploy changes without unintended production impact.</li>
                     </ul>
-                </div>
-
-                <div class="project-impact">
-                    <div class="impact-pill"><i class="fas fa-bolt"></i> Hit ratio 20% &rarr; 95%</div>
-                    <div class="impact-pill"><i class="fas fa-chart-line"></i> 50%+ Infra Cost Reduction</div>
-                    <div class="impact-pill"><i class="fas fa-database"></i> 30%+ EBS/S3 Savings</div>
                 </div>
                 
                 <div class="tech-stack-inline">
-                    <span class="tech-badge">Amazon CloudFront</span>
-                    <span class="tech-badge">Route 53</span>
-                    <span class="tech-badge">ACM</span>
-                    <span class="tech-badge">Amazon S3</span>
-                    <span class="tech-badge">Amazon EC2</span>
-                    <span class="tech-badge">Amazon EBS</span>
+                    <span class="tech-badge">Terraform</span>
+                    <span class="tech-badge">Infrastructure as Code</span>
+                    <span class="tech-badge">AWS</span>
+                    <span class="tech-badge">Resource Import</span>
+                    <span class="tech-badge">Validation</span>
                 </div>
             </div>
         </div>
 
-        <!-- Project 4 -->
-        <div class="project-card animate-hidden fade-up stagger-4">
+        <!-- Project 3: Containers & Orchestration -->
+        <div class="project-card animate-hidden fade-up stagger-3">
             <div class="project-visual project-visual-k8s">
                 <i class="fas fa-dharmachakra"></i>
-                <i class="fab fa-docker"></i>
-                <i class="fas fa-cubes"></i>
+                <i class="fab fa-aws"></i>
+                <i class="fas fa-expand-arrows-alt"></i>
             </div>
             <div class="project-content">
-                <div class="project-category">DevOps Project</div>
-                <h3 class="project-title">Kubernetes Application Deployment Lab</h3>
-                <p class="project-desc">A hands-on practical environment designed to build production-oriented Kubernetes understanding.</p>
+                <div class="project-category">Professional Work</div>
+                <h3 class="project-title">Container Orchestration & Scaling</h3>
+                <p class="project-desc">Deployed and scaled containerized workloads across managed AWS orchestration platforms.</p>
                 
                 <div class="project-work">
                     <h4>What I worked on</h4>
                     <ul>
-                        <li>Containerized a Python application and published the Docker image to a registry.</li>
-                        <li>Configured a local Minikube cluster and utilized kubectl for cluster interaction.</li>
-                        <li>Managed Deployments, ReplicaSets, and Services with appropriate labels and selectors.</li>
-                        <li>Practiced rolling updates, rollbacks, self-healing, and troubleshooting issues like ImagePullBackOff.</li>
+                        <li>Utilized Docker for containerization and managed images in Amazon ECR.</li>
+                        <li>Deployed and orchestrated containerized applications using Amazon ECS and Amazon EKS.</li>
+                        <li>Configured Horizontal Pod Autoscaler (HPA) to scale Kubernetes workloads based on traffic.</li>
+                        <li>Implemented Cluster Autoscaler to automatically scale underlying EKS worker node infrastructure.</li>
                     </ul>
                 </div>
                 
                 <div class="tech-stack-inline">
+                    <span class="tech-badge">Amazon EKS</span>
+                    <span class="tech-badge">Amazon ECS</span>
                     <span class="tech-badge">Kubernetes</span>
-                    <span class="tech-badge">Minikube</span>
-                    <span class="tech-badge">kubectl</span>
                     <span class="tech-badge">Docker</span>
-                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">Amazon ECR</span>
+                    <span class="tech-badge">HPA</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 4: CI/CD Automation -->
+        <div class="project-card animate-hidden fade-up stagger-4">
+            <div class="project-visual project-visual-opt" style="background: linear-gradient(135deg, #065f46, #0f172a);">
+                <i class="fas fa-code-branch"></i>
+                <i class="fab fa-github"></i>
+                <i class="fab fa-docker"></i>
+            </div>
+            <div class="project-content">
+                <div class="project-category">Professional Work</div>
+                <h3 class="project-title">CI/CD & Deployment Automation</h3>
+                <p class="project-desc">Automated build and deployment workflows to ensure reliable, repeatable application updates.</p>
+                
+                <div class="project-work">
+                    <h4>What I worked on</h4>
+                    <ul>
+                        <li>Built and maintained end-to-end CI/CD pipelines using Jenkins, GitHub Actions, and AWS CodePipeline.</li>
+                        <li>Automated application builds, Docker image creation, and pushes to Amazon ECR.</li>
+                        <li>Configured automated deployment workflows using AWS CodeDeploy for EC2 and direct deployments to ECS/EKS.</li>
+                        <li>Provided active production deployment support to handle 30+ deployments per week.</li>
+                    </ul>
+                </div>
+                
+                <div class="tech-stack-inline">
+                    <span class="tech-badge">Jenkins</span>
+                    <span class="tech-badge">GitHub Actions</span>
+                    <span class="tech-badge">AWS CodePipeline</span>
+                    <span class="tech-badge">AWS CodeDeploy</span>
+                    <span class="tech-badge">Docker</span>
                 </div>
             </div>
         </div>
