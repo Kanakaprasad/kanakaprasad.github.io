@@ -16,27 +16,61 @@
                     </div>
                 </div>
                 
-                <div class="experience-metrics">
-                    <span style="font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 8px;">Key Achievements</span>
-                    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                        <div class="metric-pill"><i class="fas fa-chart-line"></i> 50%+ AWS Infra Cost Reduction</div>
-                        <div class="metric-pill"><i class="fas fa-bolt"></i> CloudFront Hit Ratio 20% &rarr; 95%</div>
-                        <div class="metric-pill"><i class="fas fa-database"></i> 30%+ EBS & S3 Savings</div>
+                <!-- Premium Achievements Grid -->
+                <div class="premium-achievements animate-hidden fade-up stagger-2">
+                    <div class="ach-card">
+                        <div class="ach-icon"><i class="fas fa-layer-group"></i></div>
+                        <div class="ach-text">
+                            <h4>Introduced Terraform</h4>
+                            <p>Imported existing AWS resources, created Terraform configurations, and used <code>terraform plan</code> for safe validation before changes.</p>
+                        </div>
+                    </div>
+                    <div class="ach-card">
+                        <div class="ach-icon"><i class="fas fa-dharmachakra"></i></div>
+                        <div class="ach-text">
+                            <h4>EKS, HPA & Cluster Autoscaler</h4>
+                            <p>Managed Kubernetes-based workloads. Scaled applications using HPA and scaled nodes via Cluster Autoscaler based on traffic.</p>
+                        </div>
+                    </div>
+                    <div class="ach-card">
+                        <div class="ach-icon"><i class="fas fa-chart-pie"></i></div>
+                        <div class="ach-text">
+                            <h4>50%+ Cost Reduction</h4>
+                            <p>Optimized AWS infrastructure leading to a 50%+ reduction in overall AWS monthly costs.</p>
+                        </div>
+                    </div>
+                    <div class="ach-card">
+                        <div class="ach-icon"><i class="fas fa-bolt"></i></div>
+                        <div class="ach-text">
+                            <h4>95% Cache Hit Ratio</h4>
+                            <p>Optimized content delivery networks, successfully improving CloudFront hit ratio from 20% to 95%.</p>
+                        </div>
+                    </div>
+                    <div class="ach-card">
+                        <div class="ach-icon"><i class="fas fa-users"></i></div>
+                        <div class="ach-text">
+                            <h4>5-Member DevOps Team</h4>
+                            <p>Coordinated engineering workflows and production support across a 5-member DevOps team.</p>
+                        </div>
                     </div>
                 </div>
 
-                <ul class="experience-details">
-                    <li><strong>Infrastructure as Code:</strong> Introduced Terraform to manage existing manually provisioned AWS infrastructure. Imported resources and utilized <code>terraform plan</code> for safe, gradual validation.</li>
-                    <li><strong>Container Orchestration:</strong> Containerized applications with Docker and ECR, orchestrating deployments across Amazon ECS and EKS, utilizing HPA and Cluster Autoscaler for dynamic scaling.</li>
-                    <li><strong>CI/CD & Automation:</strong> Built and maintained 10+ robust CI/CD pipelines (Jenkins, GitHub Actions, CodePipeline), handling 30+ automated deployments per week across staging and production environments.</li>
-                    <li><strong>AWS Infrastructure & Support:</strong> Architected, managed, and troubleshot resilient cloud networks (VPC, EC2, ALB, Route 53) supporting 12+ applications and 50K monthly users.</li>
-                    <li><strong>Monitoring & Leadership:</strong> Configured comprehensive observability using New Relic and CloudWatch for rapid production troubleshooting, while leading and coordinating a 5-member DevOps team.</li>
-                </ul>
+                <div class="core-responsibilities animate-hidden fade-up stagger-3">
+                    <h4 class="resp-title">Core Engineering Scope</h4>
+                    <ul class="experience-details">
+                        <li><strong>AWS Infrastructure Management:</strong> Architected, managed, and troubleshot resilient cloud networks (VPC, EC2, ALB, Route 53) supporting 12+ applications and approximately 50K monthly users.</li>
+                        <li><strong>Infrastructure as Code:</strong> Led the initiative to import and manage existing manually provisioned AWS infrastructure using Terraform, ensuring safe gradual adoption.</li>
+                        <li><strong>Container Orchestration:</strong> Orchestrated Docker container deployments across Amazon ECS and Amazon EKS workloads, configuring HPA and Cluster Autoscaler.</li>
+                        <li><strong>CI/CD Automation:</strong> Maintained 10+ robust CI/CD pipelines (Jenkins, GitHub Actions, AWS CodePipeline, CodeDeploy) handling 30+ deployments per week across staging and production.</li>
+                        <li><strong>Monitoring & Production Support:</strong> Configured comprehensive observability using New Relic and CloudWatch, maintaining high availability and security via Linux administration best practices.</li>
+                    </ul>
+                </div>
 
-                <div class="tech-stack-inline" style="margin-top: 15px;">
+                <div class="tech-stack-inline animate-hidden fade-up stagger-4" style="margin-top: 25px;">
                     <span class="tech-badge">AWS</span>
                     <span class="tech-badge">Terraform</span>
                     <span class="tech-badge">Amazon EKS & ECS</span>
+                    <span class="tech-badge">Kubernetes</span>
                     <span class="tech-badge">Docker</span>
                     <span class="tech-badge">Jenkins</span>
                     <span class="tech-badge">New Relic</span>
