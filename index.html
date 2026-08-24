@@ -41,6 +41,11 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <!-- Premium Background Layers -->
+        <div class="hero-bg-grid"></div>
+        <div class="hero-glow hero-glow-1"></div>
+        <div class="hero-glow hero-glow-2"></div>
+        
         <div class="container hero-container">
             <div class="hero-content">
                 <h1 class="animate-hidden delay-100">AWS Cloud & <span class="highlight">DevOps Engineer</span></h1>
@@ -54,25 +59,59 @@
             </div>
             
             <div class="hero-visual animate-hidden delay-300">
-                <div class="infra-diagram">
-                    <div class="infra-row">
-                        <div class="infra-node"><i class="fas fa-globe"></i><span>DNS</span></div>
-                        <div class="infra-line"></div>
-                        <div class="infra-node"><i class="fas fa-network-wired"></i><span>CDN</span></div>
+                <div class="architecture-map">
+                    <!-- SVG Connection Lines -->
+                    <svg class="arch-connections" viewBox="0 0 400 400">
+                        <!-- DNS to CDN -->
+                        <path class="conn-line" d="M 115,60 L 145,60" />
+                        <path class="conn-particle" d="M 115,60 L 145,60" />
+                        
+                        <!-- CDN to LB -->
+                        <path class="conn-line" d="M 200,90 L 200,170" />
+                        <path class="conn-particle" d="M 200,90 L 200,170" />
+                        
+                        <!-- LB to APP -->
+                        <path class="conn-line" d="M 200,230 L 200,310" />
+                        <path class="conn-particle" d="M 200,230 L 200,310" />
+                        
+                        <!-- APP to DB -->
+                        <path class="conn-line" d="M 255,340 L 285,340" />
+                        <path class="conn-particle" d="M 255,340 L 285,340" />
+
+                        <!-- CI/CD to APP -->
+                        <path class="conn-line conn-dashed" d="M 60,290 C 60,340 100,340 145,340" />
+                        <path class="conn-particle" d="M 60,290 C 60,340 100,340 145,340" />
+                        
+                        <!-- Monitor to LB -->
+                        <path class="conn-line conn-dashed" d="M 285,200 L 255,200" />
+                        
+                        <!-- Monitor to APP -->
+                        <path class="conn-line conn-dashed" d="M 340,230 C 340,310 300,340 255,340" />
+                    </svg>
+
+                    <!-- Nodes -->
+                    <div class="arch-node node-dns" style="top: 30px; left: 5px;">
+                        <i class="fas fa-globe"></i><span>User/DNS</span>
                     </div>
-                    <div class="infra-line vertical"></div>
-                    <div class="infra-row">
-                        <div class="infra-node secondary"><i class="fas fa-code-branch"></i><span>CI/CD</span></div>
-                        <div class="infra-line horizontal-dashed"></div>
-                        <div class="infra-node"><i class="fas fa-sitemap"></i><span>LB</span></div>
-                        <div class="infra-line horizontal-dashed"></div>
-                        <div class="infra-node secondary"><i class="fas fa-chart-line"></i><span>Monitor</span></div>
+                    <div class="arch-node node-cdn" style="top: 30px; left: 145px;">
+                        <i class="fas fa-network-wired"></i><span>CloudFront</span>
                     </div>
-                    <div class="infra-line vertical"></div>
-                    <div class="infra-row">
-                        <div class="infra-node"><i class="fab fa-docker"></i><span>APP</span></div>
-                        <div class="infra-line"></div>
-                        <div class="infra-node"><i class="fas fa-database"></i><span>DB</span></div>
+                    <div class="arch-node node-lb" style="top: 170px; left: 145px;">
+                        <i class="fas fa-sitemap"></i><span>ALB</span>
+                    </div>
+                    <div class="arch-node node-app" style="top: 310px; left: 145px;">
+                        <i class="fab fa-aws"></i><span>ECS/App</span>
+                    </div>
+                    <div class="arch-node node-db" style="top: 310px; left: 285px;">
+                        <i class="fas fa-database"></i><span>RDS</span>
+                    </div>
+
+                    <!-- Secondary Nodes -->
+                    <div class="arch-node secondary node-cicd" style="top: 230px; left: 5px;">
+                        <i class="fas fa-code-branch"></i><span>CI/CD</span>
+                    </div>
+                    <div class="arch-node secondary node-monitor" style="top: 170px; left: 285px;">
+                        <i class="fas fa-chart-bar"></i><span>Monitor</span>
                     </div>
                 </div>
             </div>
