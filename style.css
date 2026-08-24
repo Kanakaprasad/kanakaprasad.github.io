@@ -291,7 +291,7 @@ nav {
 }
 
 .hero-content {
-    max-width: 800px;
+    max-width: 600px;
 }
 
 .hero-content h1 {
@@ -1221,15 +1221,16 @@ footer {
 
 /* ===================== HERO INFRASTRUCTURE VISUALIZATION ===================== */
 .hero-container {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 40px;
     align-items: center;
 }
 
 @media (min-width: 992px) {
     .hero-container {
-        grid-template-columns: 1fr 1fr;
+        flex-direction: row;
+        justify-content: space-between;
     }
 }
 
@@ -1240,9 +1241,11 @@ footer {
 @media (min-width: 992px) {
     .hero-visual {
         display: flex;
-        justify-content: center;
+        flex: 1;
+        justify-content: flex-end;
         align-items: center;
         perspective: 1000px;
+        min-width: 400px;
     }
 }
 
